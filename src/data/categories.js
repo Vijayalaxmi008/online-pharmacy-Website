@@ -1,3 +1,5 @@
+import { Pill, FlaskConical, Sparkles, Users, Eye, Baby, Stethoscope, PawPrint, Activity } from 'lucide-react'
+
 // Import local category images
 import medicinesImg from '../assets/images/Categories/blackLady.png'
 import vitaminsImg from '../assets/images/Categories/tab1.png'
@@ -16,12 +18,20 @@ export const categories = [
 ]
 
 export const mainNavCategories = [
-  { name: 'ЛЕКАРСТВА', slug: 'medicines' },
+  { name: 'ЛЕКАРСТВА', slug: 'medicines', icon: Pill },
+  { name: 'ВИТАМИНЫ И БАД', slug: 'vitamins', icon: FlaskConical },
+  { name: 'КРАСОТА', slug: 'cosmetics', icon: Sparkles },
+  { name: 'ГИГИЕНА', slug: 'hygiene', icon: Users },
+  { name: 'ЛИНЗЫ', slug: 'lenses', icon: Eye },
+  { name: 'МАТЬ И ДИТЯ', slug: 'baby', icon: Baby },
+  { name: 'МЕДТОВАРЫ', slug: 'medical', icon: Stethoscope },
+  { name: 'ЗООТОВАРЫ', slug: 'pets', icon: PawPrint },
+  { name: 'МЕДТЕХНИКА', slug: 'equipment', icon: Activity },
 ]
 
 export const subNavLinks = [
-  'Лекарства', 'БАД', 'COVID-19', 'Аллергия', 'Аптечная косметика',
-  'Коэнзимы', 'Молочная', 'Сорбенты', 'Еще 32',
+  'Акции', 'Скидки', 'COVID-19', 'Аллергия', 'Лечебная косметика',
+  'Кишечник', 'Молочница', 'Суставы', 'Еще 52',
 ]
 
 export const medicineCategories = [

@@ -151,14 +151,14 @@ const Header = () => {
       <div className="text-lg font-bold leading-tight">Аптека<span className="text-gray-500">.онлайн</span></div>
       <div className="text-[10px] text-gray-500">Ваша онлайн аптека</div>
     </div>
-    <div className="hidden xl:flex gap-1 ml-2">
-      <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-7 h-7 rounded-full bg-primary-500 text-white flex items-center justify-center hover:bg-primary-600" aria-label="Instagram">
+    <div className="hidden xl:flex gap-1.5 ml-3">
+      <a href="https://vk.com" target="_blank" rel="noreferrer" className="w-7 h-7 rounded-full border border-gray-200 text-primary-500 flex items-center justify-center text-[10px] font-bold hover:bg-primary-50" aria-label="VK">VK</a>
+      <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-7 h-7 rounded-full border border-gray-200 text-primary-500 flex items-center justify-center hover:bg-primary-50" aria-label="Instagram">
         <Instagram size={14} />
       </a>
-      <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-7 h-7 rounded-full bg-primary-500 text-white flex items-center justify-center hover:bg-primary-600" aria-label="YouTube">
+      <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-7 h-7 rounded-full border border-gray-200 text-primary-500 flex items-center justify-center hover:bg-primary-50" aria-label="YouTube">
         <Youtube size={15} />
       </a>
-      <a href="https://vk.com" target="_blank" rel="noreferrer" className="w-7 h-7 rounded-full bg-primary-500 text-white flex items-center justify-center text-[10px] font-bold hover:bg-primary-600" aria-label="VK">VK</a>
     </div>
   </Link>
 
@@ -174,14 +174,14 @@ const Header = () => {
 
   <a href="tel:84952233403" className="hidden xl:flex items-start gap-2 hover:text-primary-500">
     <Phone size={18} className="text-primary-500 mt-0.5" />
-    <div><div className="font-bold text-xs">8 (495) 223-34-03</div><div className="text-[10px] text-gray-500">Интернет аптека</div></div>
+    <div><div className="font-bold text-xs">8 (495) 223-34-03</div><div className="text-[10px] text-gray-500">Интернет-аптека</div></div>
   </a>
 
   <div className="flex items-center gap-2 ml-auto">
     <button className="w-9 h-9 rounded-full border-2 border-primary-500 flex items-center justify-center hover:bg-primary-500 hover:text-white group shrink-0">
       <Search size={16} className="text-primary-500 group-hover:text-white" />
     </button>
-    <button onClick={() => setCallbackOpen(true)} className="bg-primary-500 text-white font-bold px-3 lg:px-5 py-2 rounded-full hover:bg-primary-600 text-xs lg:text-sm whitespace-nowrap">
+    <button onClick={() => setCallbackOpen(true)} className="bg-gradient-to-r from-primary-400 to-primary-600 text-white font-bold px-3 lg:px-5 py-2 rounded-full hover:opacity-90 text-xs lg:text-sm whitespace-nowrap">
       <span className="hidden lg:inline">ЗАКАЗАТЬ ЗВОНОК</span>
       <span className="lg:hidden">ЗВОНОК</span>
     </button>
@@ -202,18 +202,22 @@ const Header = () => {
         </div>
 
         {/* Main nav */}
-        <nav className="bg-[#0b1f66] relative">
+        <nav className="bg-gradient-to-r from-navy-500 to-primary-500 relative">
           <div className="container mx-auto px-4">
             <ul className="flex items-center text-white text-sm font-bold">
-              {mainNavCategories.map(cat => (
-                <li key={cat.slug} className="relative"
-                  onMouseEnter={() => cat.slug === 'medicines' && setMedicinesOpen(true)}
-                  onMouseLeave={() => cat.slug === 'medicines' && setMedicinesOpen(false)}>
-                  <Link to={`/catalog?category=${cat.slug}`} className="flex items-center justify-center gap-2 px-6 py-3 hover:bg-black/10 whitespace-nowrap">
-                    <span>{cat.name}</span>
-                  </Link>
-                </li>
-              ))}
+              {mainNavCategories.map(cat => {
+                const Icon = cat.icon
+                return (
+                  <li key={cat.slug} className="relative"
+                    onMouseEnter={() => cat.slug === 'medicines' && setMedicinesOpen(true)}
+                    onMouseLeave={() => cat.slug === 'medicines' && setMedicinesOpen(false)}>
+                    <Link to={`/catalog?category=${cat.slug}`} className="flex items-center justify-center gap-2 px-5 py-3 hover:bg-black/10 whitespace-nowrap">
+                      {Icon && <Icon size={16} />}
+                      <span>{cat.name}</span>
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </div>
           {medicinesOpen && <MedicinesMenu onClose={() => setMedicinesOpen(false)} />}
@@ -221,14 +225,20 @@ const Header = () => {
       </header>
 
       {/* MOBILE CATEGORIES */}
-      <div className="md:hidden bg-[#0b1f66] sticky top-[104px] z-40">
+      <div className="md:hidden bg-gradient-to-r from-navy-500 to-primary-500 sticky top-[104px] z-40">
         <div className="overflow-x-auto">
           <ul className="flex items-center px-2 py-1.5 text-white text-xs font-bold whitespace-nowrap">
-            {mainNavCategories.map(cat => (
-              <li key={cat.slug} className="shrink-0">
-                <Link to={`/catalog?category=${cat.slug}`} className="block px-3 py-1.5">{cat.name}</Link>
-              </li>
-            ))}
+            {mainNavCategories.map(cat => {
+              const Icon = cat.icon
+              return (
+                <li key={cat.slug} className="shrink-0">
+                  <Link to={`/catalog?category=${cat.slug}`} className="flex items-center gap-1 px-3 py-1.5">
+                    {Icon && <Icon size={13} />}
+                    {cat.name}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </div>
       </div>
