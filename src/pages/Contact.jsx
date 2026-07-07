@@ -61,7 +61,7 @@ const Contact = () => {
         </div>
 
         <div className="bg-white rounded-2xl p-5 shadow-sm">
-          <h3 className="font-bold text-sm mb-3">We vam perezvonim</h3>
+          <h3 className="font-bold text-sm mb-3">We will call you back.</h3>
           <form onSubmit={(e) => e.preventDefault()} className="space-y-2 text-xs">
             <input
               value={name}

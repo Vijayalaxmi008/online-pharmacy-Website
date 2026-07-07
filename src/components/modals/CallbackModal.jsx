@@ -1,7 +1,7 @@
 ﻿import { useState } from 'react'
 import Modal from './Modal'
 
-const CallbackModal = ({ onClose, title = 'We vam perezvonim' }) => {
+const CallbackModal = ({ onClose, title = 'We will call you back.' }) => {
   const [sent, setSent] = useState(false)
   const [form, setForm] = useState({ name: '', phone: '' })
 
