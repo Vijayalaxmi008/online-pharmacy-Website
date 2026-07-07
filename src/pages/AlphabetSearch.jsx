@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { alphabetCategoryGroups } from '../data/categories'
 
-const RU_LETTERS = 'а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я'.split(' ')
+const RU_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 const EN_LETTERS = 'a b c d e f g h i j k l m n o p q r s t u v w x y z'.split(' ')
 const DIGITS = '0 1 2 3 4 5 6 7 8 9'.split(' ')
 
@@ -9,12 +9,12 @@ const AlphabetSearch = () => {
   return (
     <div className="container mx-auto px-4 py-6">
       <p className="text-xs text-gray-500 mb-2">
-        <Link to="/" className="hover:text-primary-500">Главная</Link> / Поиск по алфавиту
+        <Link to="/" className="hover:text-primary-500">Home</Link> / Alphabet Search
       </p>
 
       <div className="flex items-center justify-between flex-wrap gap-2 mb-6">
-        <h1 className="text-2xl font-bold">Поиск по алфавиту</h1>
-        <span className="text-sm text-gray-500">Выбор товара по заболеванию</span>
+        <h1 className="text-2xl font-bold">Alphabet Search</h1>
+        <span className="text-sm text-gray-500">Choose products by condition</span>
       </div>
 
       <div className="relative bg-white rounded-2xl shadow-sm p-4 mb-8">
@@ -48,7 +48,7 @@ const AlphabetSearch = () => {
             </button>
           ))}
         </div>
-        <span className="hidden md:block absolute right-6 top-4 text-6xl font-black text-gray-100 select-none">А-Я</span>
+        <span className="hidden md:block absolute right-6 top-4 text-6xl font-black text-gray-100 select-none">A-Z</span>
       </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight, Package, Truck, ShieldCheck, Wallet, MessageCircle } from 'lucide-react'
 import ProductCard from '../components/ProductCard'
@@ -15,15 +15,15 @@ import reviewTwo from '../assets/images/Categories/review2.jpg'
 import reviewThree from '../assets/images/Categories/ladyAvacado.jpg'
 
 
-const ALPHABET_RU = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'.split('')
+const ALPHABET_RU = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 const ALPHABET_EN = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
 const FEATURES = [
-  { icon: Package, title: 'Ассортимент', desc: 'Акции, витамины, лекарства, медтехника и косметика' },
-  { icon: Truck, title: 'Быстрая доставка', desc: 'В любую точку России быстро' },
-  { icon: ShieldCheck, title: 'Гарантия', desc: 'Вся продукция сертифицирована' },
-  { icon: Wallet, title: 'Низкие цены', desc: 'Мы стараемся держать самые низкие цены' },
-  { icon: MessageCircle, title: '4349 отзывов', desc: 'Довольных клиентов нашей аптеки' },
+  { icon: Package, title: 'Assortment', desc: 'Promotions, vitamins, medicines, equipment and cosmetics' },
+  { icon: Truck, title: 'Fast Delivery', desc: 'Quick delivery to any location' },
+  { icon: ShieldCheck, title: 'Guarantee', desc: 'All products are certified' },
+  { icon: Wallet, title: 'Low Prices', desc: 'We work to keep prices affordable' },
+  { icon: MessageCircle, title: '4349 Reviews', desc: 'Satisfied pharmacy customers' },
 ]
 
 const Home = () => {
@@ -41,13 +41,12 @@ const Home = () => {
           <div className="md:col-span-2 bg-white rounded-2xl shadow-sm p-6 flex items-center justify-between gap-4 overflow-hidden min-h-[260px]">
             <div className="relative z-10 max-w-sm">
               <h2 className="text-xl font-bold mb-2">Oral-B vitality</h2>
-              <p className="text-sm text-gray-500 mb-4">электрическая зубная щетка</p>
+              <p className="text-sm text-gray-500 mb-4">Electric toothbrush</p>
               <p className="text-xs text-gray-400 mb-4 max-w-xs">
-                Клинически доказано, что электрическая зубная щетка более эффективно очищает полость рта
-                по сравнению с обычной мануальной зубной щеткой.
+                Clinically proven to clean teeth more effectively than a regular manual toothbrush.
               </p>
               <Link to="/catalog" className="inline-block bg-primary-500 text-white text-xs font-bold px-4 py-2.5 rounded-full hover:bg-primary-600">
-                ПЕРЕЙТИ В КАТАЛОГ
+                GO TO CATALOG
               </Link>
             </div>
             <img
@@ -60,11 +59,11 @@ const Home = () => {
           <div className="bg-gradient-to-br from-pink-200 to-pink-50 rounded-2xl shadow-sm p-5 flex flex-col justify-between overflow-hidden min-h-[260px]">
             <div className="relative z-10">
               <h3 className="font-bold text-base mb-1">Nivea Care</h3>
-              <p className="text-xs text-gray-600">Увлажняющий крем для лица</p>
+              <p className="text-xs text-gray-600">Moisturizing face cream</p>
             </div>
             <img src={niveaImage} alt="Nivea Care" className="w-full h-32 object-contain my-2" />
             <Link to="/catalog" className="self-start bg-white text-primary-600 text-xs font-bold px-4 py-2 rounded-full mt-4 hover:bg-gray-50">
-              ПЕРЕЙТИ В КАТАЛОГ
+              GO TO CATALOG
             </Link>
           </div>
 
@@ -92,7 +91,7 @@ const Home = () => {
       {/* ACTION OF THE MONTH */}
       <section className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-bold text-gray-900">Акция месяца</h2>
+          <h2 className="text-xl font-bold text-gray-900">Monthly Promotion</h2>
           <div className="flex gap-2">
             <button className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center hover:bg-white text-gray-500">
               <ChevronLeft size={16} />
@@ -112,7 +111,7 @@ const Home = () => {
 
       {/* HOW IT WORKS */}
       <section className="container mx-auto px-4 py-6">
-        <h2 className="text-xl font-bold mb-4 text-gray-900">Как мы работаем?</h2>
+        <h2 className="text-xl font-bold mb-4 text-gray-900">How do we work?</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {howItWorks.map(s => (
             <div key={s.step} className="bg-white rounded-2xl p-5 shadow-sm">
@@ -130,12 +129,12 @@ const Home = () => {
       <section className="container mx-auto px-4 py-6">
         <div className="bg-white rounded-2xl shadow-sm p-6 grid md:grid-cols-[220px_1fr] gap-6">
           <div>
-            <h3 className="font-bold text-sm mb-1">Средняя оценка аптеки</h3>
+            <h3 className="font-bold text-sm mb-1">Average Pharmacy Rating</h3>
             <div className="text-4xl font-bold my-2">4.8</div>
             <div className="flex text-gold-500 mb-1">★★★★★</div>
-            <p className="text-xs text-gray-500 mb-4">Общий рейтинг на основе 4349 отзывов наших покупателей</p>
+            <p className="text-xs text-gray-500 mb-4">Overall rating based on 4349 customer reviews</p>
             <Link to="/feedback" className="inline-block bg-primary-500 text-white text-xs font-bold px-4 py-2.5 rounded-full hover:bg-primary-600">
-              ОСТАВИТЬ ОТЗЫВ
+              LEAVE A REVIEW
             </Link>
           </div>
           <div>
@@ -155,7 +154,7 @@ const Home = () => {
               ))}
             </div>
             <Link to="/feedback" className="inline-block text-primary-500 text-xs font-bold mt-3 hover:underline">
-              Все 4349 отзывов
+              All 4349 reviews
             </Link>
           </div>
         </div>
@@ -163,7 +162,7 @@ const Home = () => {
 
       {/* PARTNERS */}
       <section className="container mx-auto px-4 py-6">
-        <h2 className="text-xl font-bold mb-4 text-gray-900">Наши партнеры</h2>
+        <h2 className="text-xl font-bold mb-4 text-gray-900">Our Partners</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
           {partnerLogos.map((p, i) => (
             <div key={i} className="bg-white rounded-xl p-3 shadow-sm h-16 flex items-center justify-center border border-gray-100">
@@ -175,7 +174,7 @@ const Home = () => {
 
       {/* ABOUT */}
       <section className="container mx-auto px-4 py-6">
-        <h2 className="text-xl font-bold mb-4 text-gray-900">О компании</h2>
+        <h2 className="text-xl font-bold mb-4 text-gray-900">About Company</h2>
         <ul className="space-y-3 text-sm text-gray-600 leading-relaxed">
           {aboutParagraphs.map((p, i) => (
             <li key={i} className="flex gap-3">
@@ -195,7 +194,7 @@ const Home = () => {
               searchMode === 'alphabet' ? 'bg-primary-500 text-white' : 'bg-white text-gray-600 shadow-sm'
             }`}
           >
-            Поиск по алфавиту
+            Alphabet Search
           </button>
           <button
             onClick={() => setSearchMode('disease')}
@@ -203,7 +202,7 @@ const Home = () => {
               searchMode === 'disease' ? 'bg-primary-500 text-white' : 'bg-white text-gray-600 shadow-sm'
             }`}
           >
-            Выбор товара по заболеванию
+            Choose products by condition
           </button>
         </div>
 
@@ -214,7 +213,7 @@ const Home = () => {
             {ALPHABET_EN.map(l => <button key={l} className="w-6 h-6 rounded hover:bg-primary-50 hover:text-primary-500">{l}</button>)}
             <span className="mx-2 text-gray-300">|</span>
             {[0,1,2,3,4,5,6,7,8,9].map(n => <button key={n} className="w-6 h-6 rounded hover:bg-primary-50 hover:text-primary-500">{n}</button>)}
-            <span className="ml-auto text-2xl font-bold text-primary-200">А-Я</span>
+            <span className="ml-auto text-2xl font-bold text-primary-200">A-Z</span>
           </div>
         )}
 
@@ -231,14 +230,14 @@ const Home = () => {
                   ))}
                 </ul>
                 <Link to={`/catalog?category=${group.slug}`} className="inline-block text-primary-500 text-xs font-bold mt-3 hover:underline">
-                  Все категории
+                  All categories
                 </Link>
               </div>
             ))}
           </div>
         ) : (
           <div className="bg-white rounded-2xl shadow-sm p-5">
-            <h4 className="font-bold text-sm mb-3 text-primary-600">Выберите заболевание</h4>
+            <h4 className="font-bold text-sm mb-3 text-primary-600">Choose a condition</h4>
             <div className="flex flex-wrap gap-2">
               {diseases.map(d => (
                 <Link
@@ -257,8 +256,8 @@ const Home = () => {
       {/* BLOG */}
       <section className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-bold text-gray-900">Блог о здоровье</h2>
-          <Link to="/blog" className="text-primary-500 text-sm font-bold hover:underline">Последние записи</Link>
+          <h2 className="text-xl font-bold text-gray-900">Health Blog</h2>
+          <Link to="/blog" className="text-primary-500 text-sm font-bold hover:underline">Latest posts</Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {blogPreview.map(post => (

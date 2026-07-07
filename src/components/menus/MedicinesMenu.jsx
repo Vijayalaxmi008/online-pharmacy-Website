@@ -13,12 +13,12 @@ const MedicinesMenu = ({ onClose }) => {
         <div className="flex items-center gap-2 mb-3">
           <div className="bg-white px-4 py-1.5 rounded-t-xl flex items-center gap-1.5 border-t-2 border-x-2 border-primary-500">
             <span className="text-primary-500">💊</span>
-            <span className="font-bold text-xs">ЛЕКАРСТВА</span>
+            <span className="font-bold text-xs">MEDICINES</span>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div>
-            <h3 className="font-bold text-xs mb-2 text-gray-900">КАТЕГОРИИ</h3>
+            <h3 className="font-bold text-xs mb-2 text-gray-900">CATEGORIES</h3>
             <ul className="space-y-1 text-xs">
               {medicineCategories.map(cat => (
                 <li key={cat.slug} onMouseEnter={() => setHovered(cat.slug)}
@@ -38,7 +38,7 @@ const MedicinesMenu = ({ onClose }) => {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-xs mb-2 text-gray-900">ЗАБОЛЕВАНИЯ</h3>
+            <h3 className="font-bold text-xs mb-2 text-gray-900">CONDITIONS</h3>
             <ul className="space-y-1 text-xs">
               {diseases.map(d => (
                 <li key={d} className="text-gray-700 hover:text-primary-500 cursor-pointer flex items-center gap-1">
@@ -48,7 +48,7 @@ const MedicinesMenu = ({ onClose }) => {
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-xs mb-2 text-gray-900">ХИТЫ ПРОДАЖ</h3>
+            <h3 className="font-bold text-xs mb-2 text-gray-900">BESTSELLERS</h3>
             <div className="space-y-2">
               {hitsProducts.map(p => <HitCard key={p.id} product={p} />)}
             </div>

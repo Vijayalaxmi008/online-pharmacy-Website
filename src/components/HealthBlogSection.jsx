@@ -8,9 +8,9 @@ const HealthBlogSection = () => {
     <section className="bg-gray-50 py-8 border-t border-gray-100">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-bold">Блог о здоровье</h2>
+          <h2 className="text-xl font-bold">Health Blog</h2>
           <Link to="/blog" className="text-xs text-primary-500 font-semibold hover:underline">
-            Последние записи
+            Latest posts
           </Link>
         </div>
 

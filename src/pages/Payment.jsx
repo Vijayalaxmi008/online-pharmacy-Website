@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Search, Store, ClipboardList, PackageCheck, Wallet, CreditCard, ShieldCheck, Building2 } from 'lucide-react'
 import { howItWorks } from '../data/categories'
@@ -6,16 +6,16 @@ import { howItWorks } from '../data/categories'
 const STEP_ICONS = { 1: Search, 2: Store, 3: ClipboardList, 4: PackageCheck }
 
 const CARDS = [
-  { name: 'ВБРР', color: '#c9a227' },
-  { name: 'Уралсиб Банк', color: '#0072ce' },
-  { name: 'Сбер Банк', color: '#21a038' },
-  { name: 'Райффайзен Банк', color: '#fce300' },
-  { name: 'ВТБ', color: '#0a2896' },
-  { name: 'Почта Банк', color: '#c8102e' },
-  { name: 'МТС Банк', color: '#e30611' },
-  { name: 'Газпромбанк', color: '#0033a0' },
+  { name: 'Vbrr', color: '#c9a227' },
+  { name: 'Uralsib Bank', color: '#0072ce' },
+  { name: 'Sber Bank', color: '#21a038' },
+  { name: 'Rayffayzen Bank', color: '#fce300' },
+  { name: 'Vtb', color: '#0a2896' },
+  { name: 'Pochta Bank', color: '#c8102e' },
+  { name: 'Mts Bank', color: '#e30611' },
+  { name: 'Gazprombank', color: '#0033a0' },
   { name: 'Citibank', color: '#003b70' },
-  { name: 'Альфа Банк', color: '#ef3124' },
+  { name: 'Alfa Bank', color: '#ef3124' },
 ]
 
 const Payment = () => {
@@ -24,16 +24,15 @@ const Payment = () => {
   return (
     <div className="container mx-auto px-4 py-6">
       <p className="text-xs text-gray-500 mb-2">
-        <Link to="/" className="hover:text-primary-500">Главная</Link> / Оплата
+        <Link to="/" className="hover:text-primary-500">Home</Link> / Payment
       </p>
-      <h1 className="text-2xl font-bold mb-4">Оплата</h1>
+      <h1 className="text-2xl font-bold mb-4">Payment</h1>
 
       <div className="bg-white rounded-2xl shadow-sm p-5 text-sm text-gray-600 leading-relaxed mb-8">
-        Сеть социальных аптек СТОЛИЧКИ является частью аптечного холдинга Неофарм. Первая аптека в Москве была
-        открыта в 2000 году. Наша миссия с первого дня была проста: сделать лекарства доступными по цене. Мы
-        максимально сократили путь медикаментов от производителя к потребителю. Сотрудничая напрямую с
-        производителями и дистрибьюторами, мы не только предоставляем лекарства по низким ценам, а также
-        гарантируем подлинность товаров.
+       The Stolichki Social Pharmacy Network is part of the Neopharm Pharmacy Holding. 
+       The first Stolichki pharmacy opened in Moscow in 2000. Since its establishment, the company's mission has been to make medicines affordable.
+       By minimizing the supply chain between manufacturers and customers, Stolichki ensures competitive pricing and reliable availability. 
+       Through direct partnerships with manufacturers and distributors, the company not only offers medicines at affordable prices but also guarantees the authenticity of every product.
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
@@ -53,27 +52,25 @@ const Payment = () => {
         })}
       </div>
 
-      <h2 className="text-xl font-bold mb-4">Варианты рассрочки</h2>
+      <h2 className="text-xl font-bold mb-4">Installment options</h2>
       <div className="grid md:grid-cols-2 gap-6 mb-10">
         <div className="text-sm text-gray-600 leading-relaxed space-y-3">
           <p>
-            Разнообразный и богатый опыт сложившаяся структура организации требуют определения и уточнения
-            модели развития.
+            ur extensive experience and well-established organizational structure support the continuous improvement and refinement of our development model,
+             ensuring sustainable growth and operational excellence.
           </p>
           <p>
-            Задача организации, в особенности же новая модель организационной деятельности требуют определения.
+            The organization's objectives, particularly the new model of organizational operations, require clear definition.
           </p>
           <p>
-            Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности
-            требуют определения и уточнения дальнейших направлений развития.
+            The guiding principles and the continued development of various areas of activity require the definition and refinement of future development directions.
           </p>
         </div>
         <div className="bg-primary-50 rounded-2xl p-5">
           <p className="text-sm text-gray-600 leading-relaxed mb-4">
-            Разнообразный и богатый опыт сложившаяся структура организации требуют определения и уточнения
-            модели развития. Задача организации, в особенности же новая модель организационной деятельности
-            требуют определения и уточнения направлений прогрессивного развития. Идейные соображения высшего
-            порядка.
+           Our extensive experience and well-established organizational structure require the continuous improvement and refinement of our development model. 
+           The organization's objectives, particularly the new model of organizational operations, require clear definition and ongoing development. 
+           Strategic planning and forward-thinking initiatives help define and refine the direction of our future growth.
           </p>
           <form
             onSubmit={(e) => e.preventDefault()}
@@ -83,18 +80,18 @@ const Payment = () => {
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="Ваш телефон"
+              placeholder="Your phone"
               className="flex-1 px-4 py-2.5 rounded-full border border-gray-200 text-sm focus:outline-none focus:border-primary-500"
             />
             <button
               type="submit"
               className="px-5 py-2.5 rounded-full bg-primary-500 text-white text-sm font-semibold hover:bg-primary-600 transition"
             >
-              РЕГИСТРАЦИЯ
+              Registration
             </button>
           </form>
           <p className="text-[11px] text-gray-400 mt-2">
-            Нажимая на кнопку, вы соглашаетесь на обработку персональных данных
+            By clicking the button, you agree to the processing of personal data
           </p>
         </div>
       </div>
@@ -103,23 +100,21 @@ const Payment = () => {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <Wallet size={20} className="text-primary-500" />
-            <h2 className="text-lg font-bold">Оплата наличными</h2>
+            <h2 className="text-lg font-bold">Cash payment</h2>
           </div>
           <div className="bg-white rounded-2xl shadow-sm p-5 space-y-4">
             <div>
-              <h3 className="font-bold text-sm mb-1.5">Где оплачивать</h3>
+              <h3 className="font-bold text-sm mb-1.5">Where to pay</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
-                Наличный расчет возможен при курьерской доставке, а также в пункте самовывоза. Оплата заказа
-                и доставки осуществляется непосредственно курьеру или кассиру в аптеке при получении заказа,
-                вместе с заказом получаете все необходимые документы и кассовый чек.
+                Cash payment is available for courier delivery and at pickup locations. Payment is made directly to the courier or the cashier at the pharmacy when you receive your order. 
+                You will also receive all the necessary documents and a receipt with your purchase.
               </p>
             </div>
             <div>
-              <h3 className="font-bold text-sm mb-1.5">Есть ли чек?</h3>
+              <h3 className="font-bold text-sm mb-1.5">or a receipt</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
-                Копии сертификатов и лицензий предоставляются по предварительному запросу. Чтобы оплатить
-                заказ наличными при получении, при оформлении заказа выберите способ оплаты «Наличными» и
-                нажмите «Оформить заказ».
+                Copies of certificates and licenses are available upon request. 
+                To pay for your order in cash upon delivery or pickup, select <b>"Cash"</b> as the payment method during checkout and click <b>"Place Order."</b>
               </p>
             </div>
           </div>
@@ -128,11 +123,11 @@ const Payment = () => {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <CreditCard size={20} className="text-primary-500" />
-            <h2 className="text-lg font-bold">Оплата банковской картой</h2>
+            <h2 className="text-lg font-bold">Payment by bank card</h2>
           </div>
           <div className="bg-white rounded-2xl shadow-sm p-5 space-y-4">
             <div>
-              <h3 className="font-bold text-sm mb-2">Какие платежные системы принимаются?</h3>
+              <h3 className="font-bold text-sm mb-2">What payment methods are accepted?</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {CARDS.map(c => (
                   <div key={c.name} className="border border-gray-200 rounded-xl px-2 py-2.5 text-center flex items-center justify-center gap-1.5">
@@ -145,11 +140,10 @@ const Payment = () => {
             <div className="flex items-start gap-2 pt-2 border-t border-gray-100">
               <ShieldCheck size={16} className="text-primary-500 mt-0.5 shrink-0" />
               <div>
-                <h3 className="font-bold text-sm mb-1">Как обеспечивается безопасность персональных данных</h3>
+                <h3 className="font-bold text-sm mb-1">How is the security of personal data ensured?</h3>
                 <p className="text-xs text-gray-500 leading-relaxed">
-                  Разнообразный и богатый опыт сложившаяся структура организации требуют определения и
-                  уточнения модели развития. Задача организации, в особенности же новая модель организационной
-                  деятельности требуют определения.
+                  Our extensive experience and well-established organizational structure require the continuous improvement and refinement of our development model. 
+                  The organization's objectives, particularly the new model of organizational operations, require clear definition and ongoing development.
                 </p>
               </div>
             </div>
@@ -160,29 +154,30 @@ const Payment = () => {
       <div className="mb-10">
         <div className="flex items-center gap-2 mb-3">
           <Building2 size={20} className="text-primary-500" />
-          <h2 className="text-lg font-bold">Безналичный расчет для юридических лиц или ИП</h2>
+          <h2 className="text-lg font-bold">Cashless payment for legal entities or individual entrepreneurs</h2>
         </div>
         <div className="bg-white rounded-2xl shadow-sm p-5 text-sm text-gray-600 leading-relaxed space-y-3">
           <p>
-            Разнообразный и богатый опыт сложившаяся структура организации требуют определения и уточнения
-            модели развития. Задача организации, в особенности же новая модель организационной деятельности
-            требуют определения и уточнения направлений прогрессивного развития. Идейные соображения высшего
-            порядка, а также дальнейшее развитие различных форм деятельности требуют определения и уточнения
-            дальнейших направлений развития.
+            Our extensive experience and well-established organizational structure require the continuous improvement and refinement of our development model. 
+            The organization's objectives, particularly the new model of organizational operations, require the definition and refinement of progressive development strategies. 
+            Strategic planning and the continued development of various areas of activity help define and strengthen the direction of future growth.
           </p>
           <p>
-            Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей
-            деятельности позволяет оценить значение модели развития. Товарищи! начало повседневной работы по
-            формированию позиции представляет собой интересный эксперимент проверки систем массового участия.
+            Our diverse and rich experience with constant information and propaganda support allows us to evaluate the importance of model development. 
+            Comrades! Starting daily work on this... position-forming approach represents an interesting experiment in testing mass participation systems.
           </p>
         </div>
       </div>
 
-      <div className="bg-gradient-to-r from-navy-500 to-primary-500 text-white rounded-2xl p-6 text-sm">
-        Если возникнут вопросы, звоните на бесплатный номер <span className="font-bold">8-800-777-22-33</span>,
-        пишите на почту <span className="font-bold">info@restoll.ru</span>. Мы на связи по будним дням с 9:00
-        до 18:00 часов, а по выходным с 12:00 до 16:00 часов.
-      </div>
+              {/* Teal contact info banner */}
+        <section className="bg-gradient-to-r from-primary-400 to-primary-600 rounded-2xl p-8 mb-8 text-center text-white">
+          <p className="text-sm leading-relaxed max-w-3xl mx-auto">
+            If you have any questions, please call our toll-free number.{' '}
+            <a href="tel:88007772233" className="font-bold underline">8-800-777-22-33</a>, Please write down the email address.{' '}
+            <a href="mailto:info@restoll.ru" className="font-bold underline">info@restoll.ru</a>. We to svyazi on
+            We are available on weekdays from 9:00 to 18:00, and on weekends from 12:00 to 16:00.
+          </p>
+        </section>
     </div>
   )
 }

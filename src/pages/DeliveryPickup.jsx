@@ -1,23 +1,23 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Truck, MapPin, Clock, ShieldCheck, Pill, FileText, Search, ChevronDown } from 'lucide-react'
 
 const PICKUP_POINTS = [
-  { name: 'Столички', addr: 'Московская обл, Ликино-Дулёво г, Калинина ул, дом № 2А', hours: 'Пн-Сб: 08:00-21:00', phone: '8 800 775 03 33' },
-  { name: 'ЕАПТЕКА', addr: 'Московская обл, Егорьевск г, Парижской Коммуны ул, дом № 1Б', hours: 'Пн-Сб: 08:00-21:00', phone: '8 495 730 53 00' },
-  { name: 'Столички', addr: 'Московская обл, Ликино-Дулёво г, Калинина ул, дом № 2А', hours: 'Пн-Сб: 08:00-21:00', phone: '8 800 775 03 33' },
-  { name: 'ЕАПТЕКА', addr: 'Московская обл, Егорьевск г, Парижской Коммуны ул, дом № 1Б', hours: 'Пн-Сб: 08:00-21:00', phone: '8 495 730 53 00' },
+  { name: 'Stolichki', addr: 'Moscow region, Likino-Dulevo , Kalinina St., building No. 2A', hours: 'Mon-Sat: 08:00-21:00', phone: '8 800 775 03 33' },
+  { name: 'E-PHARMACY', addr: 'Moscow region, Egorevsk , Parizhskoy Kommuny St., building No. 1B', hours: 'Mon-Sat: 08:00-21:00', phone: '8 495 730 53 00' },
+  { name: 'Stolichki', addr: 'Moscow region, Likino-Dulevo , Kalinina St., building No. 2A', hours: 'Mon-Sat: 08:00-21:00', phone: '8 800 775 03 33' },
+  { name: 'E-PHARMACY', addr: 'Moscow region, Egorevsk , Parizhskoy Kommuny St., building No. 1B', hours: 'Mon-Sat: 08:00-21:00', phone: '8 495 730 53 00' },
 ]
 
-// Same city list shown in the PDF mockup's "Выбор города" block
+// Same city list shown in the PDF mockup's "Vybor goroda" block
 const CITIES = [
-  'Москва', 'Санкт-Петербург', 'Нижний Новгород', 'Ростов-на-Дону', 'Самара', 'Казань',
-  'Екатеринбург', 'Тольятти', 'Омск', 'Волгоград', 'Ставрополь', 'Краснодар',
-  'Воронеж', 'Уфа', 'Ярославль', 'Саратов', 'Ижевск', 'Челябинск',
+  'Moscow', 'Saint Petersburg', 'Nizhny Novgorod', 'Rostov-on-Don', 'Samara', 'Kazan',
+  'Yekaterinburg', 'Tolyatti', 'Omsk', 'Volgograd', 'Stavropol', 'Krasnodar',
+  'Voronezh', 'Ufa', 'Yaroslavl', 'Saratov', 'Izhevsk', 'Chelyabinsk',
 ]
 
 const DeliveryPickup = () => {
-  const [city, setCity] = useState('Москва')
+  const [city, setCity] = useState('Moscow')
   const [query, setQuery] = useState('')
   const [expanded, setExpanded] = useState(false)
 
@@ -28,19 +28,19 @@ const DeliveryPickup = () => {
   <div className="bg-gray-100">
   <div className="container mx-auto px-4 py-6">
     <p className="text-xs text-gray-500 mb-2">
-      <Link to="/" className="hover:text-primary-500">Главная</Link> / Доставка и самовывоз
+      <Link to="/" className="hover:text-primary-500">Home</Link> / Delivery and Pickup
     </p>
-    <h1 className="text-2xl font-bold mb-6">Доставка и самовывоз</h1>
+    <h1 className="text-2xl font-bold mb-6">Delivery and Pickup</h1>
 
-    {/* Выбор города */}
+    {/* Vybor goroda */}
     <section className="bg-white rounded-lg shadow-sm p-5 mb-6 border border-gray-100">
-      <h2 className="text-lg font-bold mb-3">Выбор города</h2>
+      <h2 className="text-lg font-bold mb-3">Select City</h2>
       <div className="relative max-w-md mb-4">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Найдите свой город..."
+          placeholder="Naydite svoy gorod..."
           className="w-full pl-4 pr-10 py-2.5 rounded border border-gray-200 focus:border-primary-500 focus:outline-none text-sm"
         />
         <Search size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -61,7 +61,7 @@ const DeliveryPickup = () => {
           onClick={() => setExpanded(e => !e)}
           className="flex items-center gap-1 text-primary-500 text-xs font-bold mt-4 hover:underline"
         >
-          {expanded ? 'Свернуть' : 'Показать ещё'}
+          {expanded ? 'Svernut' : 'Pokazat again'}
           <ChevronDown size={14} className={expanded ? 'rotate-180 transition' : 'transition'} />
         </button>
       )}
@@ -72,41 +72,41 @@ const DeliveryPickup = () => {
         <Truck size={24} className="text-primary-500" />
       </div>
       <div>
-        <h3 className="font-bold text-sm mb-1">Оставайтесь дома! Заказывайте доставку!</h3>
+        <h3 className="font-bold text-sm mb-1">Stay Home! Order Delivery!</h3>
         <p className="text-xs text-gray-500">
-          Чтобы гарантировать безопасность и обеспечить ваше спокойствие, мы ежедневно проверяем самочувствие
-          всех курьеров и на входе выдаем им новые медицинские маски, перчатки и антисептики.
+          To ensure your safety and peace of mind, we conduct daily health checks for all our couriers. 
+          Before the start of each shift, every courier is provided with new medical masks, gloves, and hand sanitizers to maintain the highest standards of hygiene and safety throughout the delivery process.
         </p>
       </div>
     </div>
 
     <section className="mb-10">
-      <h2 className="text-xl font-bold mb-4">Доставка</h2>
-      <p className="text-sm text-gray-500 mb-4">Доставка и самовывоз в {city} и области</p>
-      <h3 className="text-sm font-bold text-gray-500 mb-3">Доставка заказов в пределах МКАД</h3>
+      <h2 className="text-xl font-bold mb-4">Delivery</h2>
+      <p className="text-sm text-gray-500 mb-4">Delivery and Pickup in {city} and oblasti</p>
+      <h3 className="text-sm font-bold text-gray-500 mb-3">Delivery zakazov in within city ring road</h3>
       <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-6 border border-gray-100">
         <table className="w-full text-sm">
           <thead className="bg-[#0b1f66] text-xs text-white">
             <tr>
-              <th className="text-left px-4 py-3 font-medium">Способ доставки</th>
-              <th className="text-left px-4 py-3 font-medium">Время исполнения</th>
-              <th className="text-left px-4 py-3 font-medium">Стоимость</th>
+              <th className="text-left px-4 py-3 font-medium">Delivery Method</th>
+              <th className="text-left px-4 py-3 font-medium">Delivery Time</th>
+              <th className="text-left px-4 py-3 font-medium">Cost</th>
             </tr>
           </thead>
           <tbody className="divide-y">
-            <tr><td className="px-4 py-3">Курьером</td><td className="px-4 py-3 text-gray-500">1-2 часа</td><td className="px-4 py-3 text-primary-500 font-bold">150 руб.</td></tr>
-            <tr><td className="px-4 py-3">Курьером (срочно)</td><td className="px-4 py-3 text-gray-500">30-60 мин</td><td className="px-4 py-3 text-primary-500 font-bold">от 300 руб.</td></tr>
-            <tr><td className="px-4 py-3">При заказе от 500 руб.</td><td className="px-4 py-3 text-gray-500">1-2 часа</td><td className="px-4 py-3 text-primary-500 font-bold">Бесплатно</td></tr>
+            <tr><td className="px-4 py-3">Courier Delivery</td><td className="px-4 py-3 text-gray-500">1-2 Hours</td><td className="px-4 py-3 text-primary-500 font-bold">150 RUB</td></tr>
+            <tr><td className="px-4 py-3">Courier Delivery (Express)</td><td className="px-4 py-3 text-gray-500">30-60 min</td><td className="px-4 py-3 text-primary-500 font-bold">from 300 RUB</td></tr>
+            <tr><td className="px-4 py-3">For Orders of 500 RUB or More</td><td className="px-4 py-3 text-gray-500">1-2 Hours</td><td className="px-4 py-3 text-primary-500 font-bold">Free</td></tr>
           </tbody>
         </table>
       </div>
 
       <div className="grid sm:grid-cols-4 gap-4 mb-8">
         {[
-          { icon: Clock, t: 'SMS с телефоном курьера', d: 'В день доставки' },
-          { icon: ShieldCheck, t: 'Бережная транспортировка', d: 'В надлежащих условиях' },
-          { icon: Truck, t: 'Звонок курьера', d: 'Перед доставкой' },
-          { icon: MapPin, t: 'Удобный интервал', d: 'Доставка в удобное время' },
+          { icon: Clock, t: 'SMS with the courier\'s phone number', d: 'before the delivery day' },
+          { icon: ShieldCheck, t: 'Careful transportation', d: 'under proper conditions' },
+          { icon: Truck, t: 'Tracking', d: 'Before delivery' },
+          { icon: MapPin, t: 'Time slot', d: 'Convenient delivery' },
         ].map(f => (
           <div key={f.t} className="bg-white rounded-lg shadow-sm p-4 text-center border border-gray-100">
             <f.icon size={20} className="text-primary-500 mx-auto mb-2" />
@@ -120,48 +120,46 @@ const DeliveryPickup = () => {
         <div className="bg-white rounded-lg shadow-sm p-5 border border-gray-100">
           <div className="flex items-center gap-2 mb-2">
             <Pill size={18} className="text-primary-500" />
-            <h3 className="font-bold text-sm">Доставка безрецептурных лекарств</h3>
+            <h3 className="font-bold text-sm">Delivery of Non-Prescription Medicines</h3>
           </div>
           <p className="text-xs text-gray-500 leading-relaxed">
-            Согласно указу президента №187 от 17 марта 2020 года о дистанционной продаже безрецептурных
-            лекарств, осуществляется доставка на дом безрецептурных лекарственных средств, а также БАД,
-            медицинских изделий, товаров для дома и красоты, бытовой химии и сопутствующих товаров.
+            In accordance with Presidential Decree No. 187 dated March 17, 2020, on the remote sale of non-prescription medicines, we provide home delivery 
+            of non-prescription medicines, dietary supplements, medical devices, home and beauty products, household chemicals, and related products.
           </p>
         </div>
         <div className="bg-white rounded-lg shadow-sm p-5 border border-gray-100">
           <div className="flex items-center gap-2 mb-2">
             <FileText size={18} className="text-primary-500" />
-            <h3 className="font-bold text-sm">Доставка рецептурных лекарств</h3>
+            <h3 className="font-bold text-sm">Delivery of Prescription Medicines</h3>
           </div>
           <p className="text-xs text-gray-500 leading-relaxed">
-            Доставка рецептурных лекарств, при наличии рецепта, выписанного врачом, осуществляется до
-            ближайшей аптеки. Забрать заказ можно самостоятельно, предъявив рецепт и документ,
-            удостоверяющий личность.
+            Prescription medicines are delivered to the nearest pharmacy upon presentation of a valid prescription issued by a licensed physician.
+             Customers may collect their order in person by presenting the original prescription along with a valid government-issued identification document to verify their identity.
           </p>
         </div>
       </div>
     </section>
 
     <section className="mb-10">
-      <h2 className="text-xl font-bold mb-4">Порядок обмена/возврата</h2>
+      <h2 className="text-xl font-bold mb-4">Return and Exchange Procedure</h2>
       <div className="bg-white rounded-lg shadow-sm p-5 text-sm text-gray-600 space-y-2 border border-gray-100">
-        <p>Отказаться от доставленного заказа и его оплаты возможно в следующих случаях:</p>
+        <p>You may refuse the delivered order and decline payment in the following cases:</p>
         <ul className="list-disc list-inside space-y-1 text-xs text-gray-500">
-          <li>доставленный товар не соответствует заказанному;</li>
-          <li>товар поврежден вследствие нарушения целостности упаковки;</li>
-          <li>товар поврежден вследствие несоответствия упаковки характеру вложения и условиям пересылки (за исключением требований по температурному режиму).</li>
+          <li>The delivered product does not match the product that was ordered.</li>
+          <li>The product has been damaged due to compromised or damaged packaging.</li>
+          <li>The product has been damaged due to packaging that was unsuitable for the nature of the contents and the shipping conditions
+             (with the exception of temperature control requirements).</li>
         </ul>
-        <p className="text-xs text-gray-400 pt-1">Товар может быть возвращен только в момент доставки.</p>
+        <p className="text-xs text-gray-400 pt-1">The product may be returned only at the time of delivery.</p>
         <p className="text-xs text-primary-500 pt-1">
-          Согласно Постановлению Правительства РФ от 31.12.2020 №2463, не подлежат обмену и возврату товары
-          надлежащего качества: лекарственные препараты, предметы личной гигиены (зубные щетки и другие
-          аналогичные товары), парфюмерно-косметические товары.
+        In accordance with Resolution No. 2463 of the Government of the Russian Federation, dated December 31, 2020, goods of proper quality are not eligible
+         for exchange or return. These include medicines, personal hygiene products (such as toothbrushes and other similar items), and perfumes and cosmetic products.
         </p>
       </div>
     </section>
 
     <section>
-      <h2 className="text-xl font-bold mb-4">Самовывоз</h2>
+      <h2 className="text-xl font-bold mb-4">Pickup</h2>
       <div className="space-y-3 mb-6">
         {PICKUP_POINTS.map((p, i) => (
           <div key={i} className="bg-white rounded-lg shadow-sm p-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 text-sm border border-gray-100">
@@ -172,17 +170,17 @@ const DeliveryPickup = () => {
             </div>
             <span className="text-gray-500 text-xs shrink-0">{p.hours}</span>
             <span className="text-gray-700 font-medium text-xs shrink-0">{p.phone}</span>
-            <button className="text-primary-500 text-xs font-bold hover:underline shrink-0">Посмотреть</button>
+            <button className="text-primary-500 text-xs font-bold hover:underline shrink-0">to see</button>
           </div>
         ))}
       </div>
 
       <div className="bg-primary-50 rounded-lg p-5 border border-primary-100">
-        <h3 className="font-bold text-sm mb-2">Условия самовывоза</h3>
+        <h3 className="font-bold text-sm mb-2">Self-pickup terms</h3>
         <ul className="text-xs text-gray-600 space-y-1 list-disc list-inside">
-          <li>Стоимость самовывоза — бесплатно</li>
-          <li>Самовывоз из партнерских аптек при заказе от 500 руб.</li>
-          <li>Заказ хранится 5 дней с момента доставки в пункт самовывоза</li>
+          <li>Self-pickup cost — free</li>
+          <li>Pickup at partner pharmacies for orders of 500 RUB or more.</li>
+          <li>Your order will be stored for 5 days from the time it is delivered to the pickup point.</li>
         </ul>
       </div>
     </section>

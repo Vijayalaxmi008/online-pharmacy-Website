@@ -7,7 +7,7 @@ const ServicePagesModal = ({ onClose }) => (
       <div className="flex items-center justify-center gap-2 mb-2">
         <div className="bg-white px-3 py-1.5 rounded-t-xl border-t border-x flex items-center gap-1.5">
           <X size={14} className="text-primary-500" />
-          <span className="text-primary-500 text-xs">Служебные страницы</span>
+          <span className="text-primary-500 text-xs">Service Pages</span>
         </div>
       </div>
       <button onClick={onClose} className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 z-10"><X size={20} /></button>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { reviews as seedReviews } from '../data/categories'
 
@@ -22,21 +22,21 @@ const Reviews = () => {
   return (
     <div className="container mx-auto px-4 py-6">
       <p className="text-xs text-gray-500 mb-2">
-        <Link to="/" className="hover:text-primary-500">Главная</Link> / Отзывы о нас
+        <Link to="/" className="hover:text-primary-500">Home</Link> / Reviews About Us
       </p>
-      <h1 className="text-2xl font-bold mb-4">Отзывы о нас</h1>
+      <h1 className="text-2xl font-bold mb-4">Reviews About Us</h1>
 
       <div className="grid lg:grid-cols-[280px_1fr] gap-6">
         <aside>
           <div className="bg-white rounded-2xl shadow-sm p-5 mb-4">
-            <div className="text-sm text-gray-500 mb-1">Средняя оценка</div>
+            <div className="text-sm text-gray-500 mb-1">Average rating</div>
             <div className="flex items-end gap-2 mb-1">
               <span className="text-4xl font-bold">4.8</span>
               <div className="flex text-gold-500 mb-1">★★★★★</div>
             </div>
-            <p className="text-xs text-gray-500 mb-4">Общий рейтинг на основе 4241 отзыва</p>
+            <p className="text-xs text-gray-500 mb-4">Overall rating to based on 4241 reviews</p>
             <button className="w-full bg-primary-500 text-white font-bold py-2.5 rounded-full text-sm hover:bg-primary-600">
-              ОСТАВИТЬ ОТЗЫВ
+              LEAVE REVIEW
             </button>
           </div>
           <div className="bg-white rounded-2xl shadow-sm p-5 space-y-2 text-xs">
@@ -46,7 +46,7 @@ const Reviews = () => {
                 <div className="flex-1 bg-gray-200 rounded-full h-1.5">
                   <div className="bg-gold-500 h-1.5 rounded-full" style={{ width: `${r.pct}%` }} />
                 </div>
-                <span className="text-gray-500 w-14 text-right">{r.count} отзыв.</span>
+                <span className="text-gray-500 w-14 text-right">{r.count} review.</span>
               </label>
             ))}
           </div>
@@ -54,18 +54,18 @@ const Reviews = () => {
 
         <div>
           <div className="flex items-center gap-2 mb-4 text-xs">
-            <span className="text-gray-500">Сортировать:</span>
+            <span className="text-gray-500">Sort:</span>
             <button
               onClick={() => setSort('date')}
               className={`px-3 py-1.5 rounded-full border ${sort === 'date' ? 'bg-primary-500 text-white border-primary-500' : 'border-gray-200 text-gray-600'}`}
             >
-              По дате
+              By date
             </button>
             <button
               onClick={() => setSort('rating')}
               className={`px-3 py-1.5 rounded-full border ${sort === 'rating' ? 'bg-primary-500 text-white border-primary-500' : 'border-gray-200 text-gray-600'}`}
             >
-              Самые полезные
+              Most helpful
             </button>
           </div>
 
@@ -88,7 +88,7 @@ const Reviews = () => {
           </div>
 
           <div className="bg-white rounded-2xl shadow-sm p-5">
-            <h3 className="font-bold mb-3">Оставить отзыв</h3>
+            <h3 className="font-bold mb-3">Leave a review</h3>
             <div className="flex gap-0.5 mb-3">
               {[1, 2, 3, 4, 5].map(n => (
                 <button
@@ -104,11 +104,11 @@ const Reviews = () => {
             </div>
             <form onSubmit={(e) => e.preventDefault()} className="space-y-2 text-sm">
               <div className="grid sm:grid-cols-2 gap-2">
-                <input placeholder="Ваше имя" className="px-3 py-2 border-2 border-gray-200 rounded-full focus:border-primary-500 focus:outline-none" />
-                <input placeholder="Ваша почта" className="px-3 py-2 border-2 border-gray-200 rounded-full focus:border-primary-500 focus:outline-none" />
+                <input placeholder="Your name" className="px-3 py-2 border-2 border-gray-200 rounded-full focus:border-primary-500 focus:outline-none" />
+                <input placeholder="Your email" className="px-3 py-2 border-2 border-gray-200 rounded-full focus:border-primary-500 focus:outline-none" />
               </div>
-              <textarea placeholder="Напишите подробный отзыв, полезный для нас..." rows={3} className="w-full px-3 py-2 border-2 border-gray-200 rounded-2xl focus:border-primary-500 focus:outline-none" />
-              <button className="bg-primary-500 text-white font-bold px-5 py-2 rounded-full text-sm hover:bg-primary-600">ОТПРАВИТЬ</button>
+              <textarea placeholder="Write detailed review, helpful for us..." rows={3} className="w-full px-3 py-2 border-2 border-gray-200 rounded-2xl focus:border-primary-500 focus:outline-none" />
+              <button className="bg-primary-500 text-white font-bold px-5 py-2 rounded-full text-sm hover:bg-primary-600">SEND</button>
             </form>
           </div>
         </div>

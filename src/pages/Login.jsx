@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Mail, Lock, Eye, EyeOff, ArrowLeft } from 'lucide-react'
 import { useApp } from '../context/AppContext'
@@ -33,13 +33,13 @@ const Login = () => {
           ✕
         </button>
 
-        <h2 className="text-2xl font-bold mb-2">Войти</h2>
+        <h2 className="text-2xl font-bold mb-2">Sign In</h2>
         <button onClick={() => setRegisterOpen(true)} className="text-green-600 text-sm mb-4 hover:underline">
-          Регистрация
+          Register
         </button>
 
         <p className="text-sm text-gray-600 mb-6">
-          Оставьте ваши данные и мы свяжемся с вами. Мы не занимаемся рассылкой рекламных сообщений, а так же не передаем контактные данные третьим лицам
+          Ostavte vashi data and we svyazhemsya with vami. We not zanimaemsya rassylkoy reklamnykh soobshcheniy, a tak zhe not peredaem kontaktnye data third parties
         </p>
 
         {error && (
@@ -54,7 +54,7 @@ const Login = () => {
             <input
               required
               type="email"
-              placeholder="Ваш email"
+              placeholder="Vash email"
               value={form.email}
               onChange={e => setForm({...form, email: e.target.value})}
               className="w-full pl-12 pr-4 py-3.5 border-2 border-gray-200 rounded-full focus:border-green-600 focus:outline-none"
@@ -66,7 +66,7 @@ const Login = () => {
             <input
               required
               type={showPassword ? 'text' : 'password'}
-              placeholder="Пароль"
+              placeholder="Password"
               value={form.password}
               onChange={e => setForm({...form, password: e.target.value})}
               className="w-full pl-12 pr-12 py-3.5 border-2 border-gray-200 rounded-full focus:border-green-600 focus:outline-none"
@@ -83,9 +83,9 @@ const Login = () => {
           <div className="flex items-center justify-between text-sm">
             <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" className="accent-green-600" />
-              <span className="text-gray-600">Запомнить меня</span>
+              <span className="text-gray-600">Zapomnit menya</span>
             </label>
-            <a href="#" className="text-green-600 hover:underline">Забыли пароль?</a>
+            <a href="#" className="text-green-600 hover:underline">Zabyli parol?</a>
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-2">
@@ -93,17 +93,17 @@ const Login = () => {
               type="submit"
               className="bg-green-600 text-white font-bold px-8 py-3 rounded-full hover:bg-green-700 transition w-full sm:w-auto"
             >
-              ВОЙТИ
+              Voyti
             </button>
             <p className="text-xs text-gray-500 flex-1">
-              Нажимая на кнопку, вы соглашаетесь на обработку{' '}
-              <span className="text-green-600">персональных данных</span>
+              By clicking the button, you agree to the processing of{' '}
+              <span className="text-green-600">personal data</span>
             </p>
           </div>
         </form>
 
         <div className="mt-6 pt-6 border-t">
-          <p className="text-center text-sm text-gray-500 mb-3">Или войдите через</p>
+          <p className="text-center text-sm text-gray-500 mb-3">or voydite cherez</p>
           <div className="flex justify-center gap-3">
             <button className="w-12 h-12 rounded-full bg-blue-600 text-white font-bold">VK</button>
             <button className="w-12 h-12 rounded-full bg-red-500 text-white font-bold">G</button>

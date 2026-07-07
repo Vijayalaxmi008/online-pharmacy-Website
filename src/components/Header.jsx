@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { MapPin, Heart, User, Search, Phone, Mail, ShoppingCart, Menu, X, ChevronDown, LogOut, Instagram, Youtube } from 'lucide-react'
 import { useApp } from '../context/AppContext'
@@ -35,7 +35,7 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-2">
             <Logo size="small" />
             <div>
-              <div className="text-sm font-bold text-gray-900">Аптека<span className="text-gray-500">.онлайн</span></div>
+              <div className="text-sm font-bold text-gray-900">Pharmacy<span className="text-gray-500">.online</span></div>
             </div>
           </Link>
           <Link to="/cart" className="relative p-2">
@@ -45,7 +45,7 @@ const Header = () => {
         </div>
         <div className="px-3 py-2 border-b">
           <div className="relative">
-            <input type="text" placeholder="Поиск лекарств..." className="w-full pl-3 pr-9 py-2 bg-gray-100 rounded-full focus:outline-none text-sm" />
+            <input type="text" placeholder="Search medicines..." className="w-full pl-3 pr-9 py-2 bg-gray-100 rounded-full focus:outline-none text-sm" />
             <Search size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" />
           </div>
         </div>
@@ -54,13 +54,13 @@ const Header = () => {
             <MapPin size={16} className="text-primary-500" /><span className="text-gray-600">{city.split(' ')[0]}</span>
           </button>
           <Link to={user ? '/account' : '/login'} className="flex flex-col items-center gap-0.5 px-2 py-1">
-            <User size={16} className="text-primary-500" /><span className="text-gray-600">{user ? 'Кабинет' : 'Войти'}</span>
+            <User size={16} className="text-primary-500" /><span className="text-gray-600">{user ? 'office' : 'Sign In'}</span>
           </Link>
           <Link to="/favorites" className="flex flex-col items-center gap-0.5 px-2 py-1">
-            <Heart size={16} className="text-primary-500" /><span className="text-gray-600">Избранное</span>
+            <Heart size={16} className="text-primary-500" /><span className="text-gray-600">Favorites</span>
           </Link>
           <button onClick={() => setServiceOpen(true)} className="flex flex-col items-center gap-0.5 px-2 py-1">
-            <Menu size={16} className="text-primary-500" /><span className="text-gray-600">Меню</span>
+            <Menu size={16} className="text-primary-500" /><span className="text-gray-600">Menu</span>
           </button>
         </div>
       </header>
@@ -73,7 +73,7 @@ const Header = () => {
             <div className="flex items-center justify-between p-4 border-b">
               <div className="flex items-center gap-2">
                 <Logo size="small" />
-                <span className="font-bold text-sm">Аптека<span className="text-gray-500">.онлайн</span></span>
+                <span className="font-bold text-sm">Pharmacy<span className="text-gray-500">.online</span></span>
               </div>
               <button onClick={() => setMobileMenuOpen(false)} className="p-2"><X size={20} /></button>
             </div>
@@ -81,10 +81,10 @@ const Header = () => {
               {user ? (
                 <Link to="/account" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl mb-4">
                   <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#001A70] to-primary-500 text-white flex items-center justify-center font-bold">{(user.name || 'U')[0].toUpperCase()}</div>
-                  <div><div className="font-medium text-sm">{user.name || user.email}</div><div className="text-xs text-gray-500">Личный кабинет</div></div>
+                  <div><div className="font-medium text-sm">{user.name || user.email}</div><div className="text-xs text-gray-500">Account</div></div>
                 </Link>
               ) : (
-                <button onClick={() => { setMobileMenuOpen(false); setAuthOpen(true) }} className="w-full bg-primary-500 text-white py-3 rounded-full font-bold mb-4">Войти / Регистрация</button>
+                <button onClick={() => { setMobileMenuOpen(false); setAuthOpen(true) }} className="w-full bg-primary-500 text-white py-3 rounded-full font-bold mb-4">Sign In / Register</button>
               )}
               <ul className="space-y-1 mb-4">
                 {mainNavCategories.map(cat => (
@@ -96,17 +96,17 @@ const Header = () => {
                 ))}
               </ul>
               <ul className="space-y-1 border-t pt-2">
-                <li><Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">О компании</Link></li>
-                <li><Link to="/delivery" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Доставка</Link></li>
-                <li><Link to="/payment" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Оплата</Link></li>
-                <li><Link to="/contacts" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Контакты</Link></li>
-                <li><Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Блог</Link></li>
-                <li><Link to="/favorites" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Избранное</Link></li>
-                <li><Link to="/cart" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Корзина</Link></li>
+                <li><Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">About Company</Link></li>
+                <li><Link to="/delivery" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Delivery</Link></li>
+                <li><Link to="/payment" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Payment</Link></li>
+                <li><Link to="/contacts" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Contacts</Link></li>
+                <li><Link to="/blog" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Blog</Link></li>
+                <li><Link to="/favorites" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Favorites</Link></li>
+                <li><Link to="/cart" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-3 hover:bg-gray-50 rounded-lg text-sm">Cart</Link></li>
               </ul>
               {user && (
                 <button onClick={handleLogout} className="w-full flex items-center gap-3 px-3 py-3 text-red-500 mt-4 border-t pt-4 text-sm">
-                  <LogOut size={18} />Выйти
+                  <LogOut size={18} />Sign Out
                 </button>
               )}
             </div>
@@ -122,23 +122,23 @@ const Header = () => {
               <MapPin size={14} className="text-primary-500" /><span>{city}</span><ChevronDown size={12} className="text-gray-400" />
             </button>
             <button onClick={() => setServiceOpen(true)} className="flex items-center gap-1 text-gray-700 hover:text-primary-500">
-              <Menu size={14} className="text-primary-500" /><span>Служебные страницы</span>
+              <Menu size={14} className="text-primary-500" /><span>Service Pages</span>
             </button>
           </div>
           <div className="flex items-center gap-4">
             <Link to="/favorites" className="flex items-center gap-1 text-gray-700 hover:text-primary-500">
-              <span>Избранное</span><Heart size={14} className="text-primary-500" />
+              <span>Favorites</span><Heart size={14} className="text-primary-500" />
             </Link>
             {user ? (
               <div className="flex items-center gap-3">
                 <Link to="/account" className="flex items-center gap-1 text-gray-700 hover:text-primary-500">
-                  <span>Личный кабинет</span><User size={14} className="text-primary-500" />
+                  <span>Account</span><User size={14} className="text-primary-500" />
                 </Link>
                 <button onClick={handleLogout} className="text-red-500"><LogOut size={14} /></button>
               </div>
             ) : (
               <button onClick={() => setAuthOpen(true)} className="flex items-center gap-1 text-gray-700 hover:text-primary-500">
-                <span>Личный кабинет</span><User size={14} className="text-primary-500" />
+                <span>Account</span><User size={14} className="text-primary-500" />
               </button>
             )}
           </div>
@@ -148,8 +148,8 @@ const Header = () => {
   <Link to="/" className="flex items-center gap-2 shrink-0">
     <Logo size="normal" />
     <div>
-      <div className="text-lg font-bold leading-tight">Аптека<span className="text-gray-500">.онлайн</span></div>
-      <div className="text-[10px] text-gray-500">Ваша онлайн аптека</div>
+      <div className="text-lg font-bold leading-tight">Pharmacy<span className="text-gray-500">.online</span></div>
+      <div className="text-[10px] text-gray-500">Your online pharmacy</div>
     </div>
     <div className="hidden xl:flex gap-1.5 ml-3">
       <a href="https://vk.com" target="_blank" rel="noreferrer" className="w-7 h-7 rounded-full border border-gray-200 text-primary-500 flex items-center justify-center text-[10px] font-bold hover:bg-primary-50" aria-label="VK">VK</a>
@@ -164,17 +164,17 @@ const Header = () => {
 
   <a href="mailto:INFO@RESTOLL.RU" className="hidden xl:flex items-start gap-2 hover:text-primary-500">
     <Mail size={18} className="text-primary-500 mt-0.5" />
-    <div><div className="font-bold text-xs">INFO@RESTOLL.RU</div><div className="text-[10px] text-gray-500">Напишите нам</div></div>
+    <div><div className="font-bold text-xs">INFO@RESTOLL.RU</div><div className="text-[10px] text-gray-500">Write to us</div></div>
   </a>
 
   <a href="tel:88007772233" className="hidden lg:flex items-start gap-2 hover:text-primary-500">
     <Phone size={18} className="text-primary-500 mt-0.5" />
-    <div><div className="font-bold text-xs">8-800-777-22-33</div><div className="text-[10px] text-gray-500">Круглосуточно</div></div>
+    <div><div className="font-bold text-xs">8-800-777-22-33</div><div className="text-[10px] text-gray-500">24/7</div></div>
   </a>
 
   <a href="tel:84952233403" className="hidden xl:flex items-start gap-2 hover:text-primary-500">
     <Phone size={18} className="text-primary-500 mt-0.5" />
-    <div><div className="font-bold text-xs">8 (495) 223-34-03</div><div className="text-[10px] text-gray-500">Интернет-аптека</div></div>
+    <div><div className="font-bold text-xs">8 (495) 223-34-03</div><div className="text-[10px] text-gray-500">Online pharmacy</div></div>
   </a>
 
   <div className="flex items-center gap-2 ml-auto">
@@ -182,8 +182,8 @@ const Header = () => {
       <Search size={16} className="text-primary-500 group-hover:text-white" />
     </button>
     <button onClick={() => setCallbackOpen(true)} className="bg-gradient-to-r from-primary-400 to-primary-600 text-white font-bold px-3 lg:px-5 py-2 rounded-full hover:opacity-90 text-xs lg:text-sm whitespace-nowrap">
-      <span className="hidden lg:inline">ЗАКАЗАТЬ ЗВОНОК</span>
-      <span className="lg:hidden">ЗВОНОК</span>
+      <span className="hidden lg:inline">REQUEST A CALL</span>
+      <span className="lg:hidden">CALL</span>
     </button>
     <Link to="/cart" className="relative w-9 h-9 rounded-full border-2 border-primary-500 flex items-center justify-center hover:bg-primary-500 hover:text-white group shrink-0">
       <ShoppingCart size={16} className="text-primary-500 group-hover:text-white" />
@@ -252,25 +252,25 @@ const Header = () => {
       <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 flex items-stretch pb-[env(safe-area-inset-bottom)]">
         <Link to="/catalog" className="flex-1 flex flex-col items-center justify-center gap-0.5 py-2 text-gray-500">
           <Menu size={20} className="text-primary-500" />
-          <span className="text-[10px]">Каталог</span>
+          <span className="text-[10px]">Catalog</span>
         </Link>
         <Link to="/favorites" className="flex-1 flex flex-col items-center justify-center gap-0.5 py-2 text-gray-500 relative">
           <Heart size={20} className="text-primary-500" />
           {favorites.length > 0 && (
             <span className="absolute top-1 right-1/4 bg-primary-500 text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">{favorites.length}</span>
           )}
-          <span className="text-[10px]">Избранное</span>
+          <span className="text-[10px]">Favorites</span>
         </Link>
         <Link to="/cart" className="flex-1 flex flex-col items-center justify-center gap-0.5 py-2 text-gray-500 relative">
           <ShoppingCart size={20} className="text-primary-500" />
           {totalItems > 0 && (
             <span className="absolute top-1 right-1/4 bg-primary-500 text-white text-[9px] w-3.5 h-3.5 rounded-full flex items-center justify-center font-bold">{totalItems}</span>
           )}
-          <span className="text-[10px]">Корзина</span>
+          <span className="text-[10px]">Cart</span>
         </Link>
         <Link to={user ? '/account' : '/login'} className="flex-1 flex flex-col items-center justify-center gap-0.5 py-2 text-gray-500">
           <User size={20} className="text-primary-500" />
-          <span className="text-[10px]">Профиль</span>
+          <span className="text-[10px]">Profile</span>
         </Link>
       </nav>
     </>

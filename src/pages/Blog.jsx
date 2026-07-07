@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Search } from 'lucide-react'
 import { blogCategories, blogPosts } from '../data/blog'
@@ -14,9 +14,9 @@ const Blog = () => {
   return (
     <div className="container mx-auto px-4 py-6">
       <p className="text-xs text-gray-500 mb-2">
-        <Link to="/" className="hover:text-primary-500">Главная</Link> / Блог о здоровье
+        <Link to="/" className="hover:text-primary-500">Home</Link> / Health Blog
       </p>
-      <h1 className="text-2xl font-bold mb-4">Блог о здоровье</h1>
+      <h1 className="text-2xl font-bold mb-4">Health Blog</h1>
 
       <div className="flex items-center gap-2 overflow-x-auto pb-2 mb-4 text-xs">
         {blogCategories.map(cat => (
@@ -37,7 +37,7 @@ const Blog = () => {
       <div className="relative mb-6 max-w-xl">
         <input
           type="text"
-          placeholder="Не нашли статью на нужную тему? Спросите!"
+          placeholder="Did not find an article on the topic you need? Ask us!"
           className="w-full pl-4 pr-10 py-3 rounded-full border-2 border-gray-200 focus:border-primary-500 focus:outline-none text-sm"
         />
         <Search size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" />

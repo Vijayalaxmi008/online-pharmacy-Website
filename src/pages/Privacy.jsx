@@ -1,42 +1,42 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ShoppingBag, Store, ClipboardList, PackageCheck } from 'lucide-react'
 import moneyIllustration from '../assets/images/Privacy/privacy2.png'
 import securityIllustration from '../assets/images/Privacy/privacy1.png'
 
-// PAYMENT PAGE ("Оплата") — replica of Оплата.png reference
+// PAYMENT PAGE ("Payment") — replica of Payment.png reference
 
 // Step 1-4 process cards
 const paymentSteps = [
-  { title: 'Выберите товар', description: 'Воспользуйтесь поиском, чтобы найти необходимый товар', icon: ShoppingBag },
-  { title: 'Выберите аптеку', description: 'Выберите аптеку, из которой вам будет удобно забрать заказ', icon: Store },
-  { title: 'Оформите заказ', description: 'Следуйте инструкциям и завершите оформление заказа', icon: ClipboardList },
-  { title: 'Получите заказ', description: 'Заберите заказ в ближайшей к Вам аптеке', icon: PackageCheck },
+  { title: 'Select a product', description: 'Use the search function to find the product you need.', icon: ShoppingBag },
+  { title: 'Select a pharmacy', description: 'Select a pharmacy from which it will be convenient for you to pick up the order', icon: Store },
+  { title: 'Place an order', description: 'Follow the instructions and complete the order placement', icon: ClipboardList },
+  { title: 'Receive the order', description: 'Pick up the order at the nearest pharmacy to you', icon: PackageCheck },
 ]
 
 // Bank "logos" — text badges (no real bank artwork in project assets)
 const bankLogos = [
-  'ВБРР', 'Уралсиб', 'Сбер Банк', 'Райффайзен', 'ВТБ',
-  'Почта Банк', 'МТС Банк', 'Газпромбанк', 'Citibank', 'Альфа Банк',
+  'Vbrr', 'Uralsib', 'Sber Bank', 'Rayffayzen', 'Vtb',
+  'Pochta Bank', 'Mts Bank', 'Gazprombank', 'Citibank', 'Alfa Bank',
 ]
 
 const cashPaymentFAQ = [
   {
-    question: 'Где оплачивать',
-    answer: 'Наличный расчет возможен при курьерской доставке, а также в пункте самовывоза. Оплата заказа и доставки осуществляется непосредственно курьеру или кассиру в аптеке при получении заказа, вместе с заказом вы получаете все необходимые документы и кассовый чек.',
+    question: 'Where to pay',
+    answer: 'Cash payment is available for courier delivery and at the pharmacy pickup location. Payment and delivery are made directly to the courier or cashier at the pharmacy upon receipt of your order. You will receive all necessary documents and a receipt along with your order.',
   },
   {
-    question: 'Есть ли чек?',
-    answer: 'Наличный расчет возможен при курьерской доставке, а также в пункте самовывоза. Оплата заказа и доставки осуществляется непосредственно курьеру или кассиру в аптеке при получении заказа, вместе с заказом вы получаете все необходимые документы и кассовый чек.',
-  },
+    question: 'Take a look?',
+    answer: 'Copies of certificates and licenses are available upon request. To pay for your order in cash upon delivery or pickup, select "Cash" as the payment method during checkout and click "Place Order".',
+    },
 ]
 
 const securityInfo = {
-  title: 'Как обеспечивается безопасность и защита персональных данных',
+  title: 'Security and the protection of personal data are ensured.',
   paragraphs: [
-    'Разнообразный и богатый опыт сложившаяся структура организации требует определения и уточнения модели развития.',
-    'Задача организации, в особенности же новая модель организационной деятельности требует.',
-    'Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности требует и уточнения.',
+    'The organization\s diverse and extensive experience and established structure require defining and refining the development model..',
+    'The task of the organization, and especially the new model of organizational activity, requires...',
+    'High-level conceptual considerations, as well as the further development of various forms of activity, require refinement and the addition of an official website.',
   ],
 }
 
@@ -50,19 +50,19 @@ const Privacy = () => {
       <div className="container mx-auto px-4 py-6">
         {/* Breadcrumb */}
         <p className="text-xs text-gray-500 mb-2">
-          <Link to="/" className="hover:text-primary-500">Главная</Link> / Оплата
+          <Link to="/" className="hover:text-primary-500">Home</Link> / Payment
         </p>
 
         {/* Page title */}
-        <h1 className="text-3xl font-bold mb-6">Оплата</h1>
+        <h1 className="text-3xl font-bold mb-6">Payment</h1>
 
         {/* Introduction */}
         <p className="text-sm text-gray-600 leading-relaxed mb-10 max-w-4xl">
-          Сеть социальных аптек СТОЛИЧКИ является частью аптечного холдинга Неофарм. Первая аптека в Москве
-          была открыта в 2000 году. Наша миссия с первого дня была проста: сделать лекарства доступными по
-          цене. Мы максимально сократили путь медикаментов от производителя к потребителю. Сотрудничая
-          напрямую с производителями и дистрибьюторами, мы не только предоставляем лекарства по низким
-          ценам, а также гарантируем подлинность товаров.
+          The <b>Stolichki</b> social pharmacy chain is part of the <b>Neopharm</b> pharmacy holding. The first pharmacy in <b>Moscow</b> was opened in <b>2000</b>. 
+          Our mission, from the very first day, has been simple: <b>to make medicines affordable in terms of price</b>. 
+          We have reduced the path of medicines from the manufacturer to the consumer as much as possible. 
+          By cooperating directly with manufacturers and distributors, we not only provide medicines at low prices but also guarantee the authenticity of our products.
+          This version stays very close to the original wording while using natural, formal English appropriate for an official website.
         </p>
 
         {/* Step cards */}
@@ -81,60 +81,57 @@ const Privacy = () => {
           })}
         </section>
 
-        {/* Варианты рассрочки */}
+        {/* Varianty rassrochki */}
         <section className="grid lg:grid-cols-2 gap-8 mb-14 items-stretch">
           <div>
-            <h2 className="text-2xl font-bold mb-4">Варианты рассрочки</h2>
+            <h2 className="text-2xl font-bold mb-4">Installment options</h2>
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
-              Разнообразный и богатый опыт сложившаяся структура организации требуют определения и уточнения
-              модели развития.
+              The organization's diverse and extensive experience, along with its established structure, necessitate the definition and refinement of its development model.
             </p>
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
-              Задача организации, в особенности же новая модель организационной деятельности требует
-              определения.
+              The task of the organization, and in particular the new model of organizational activity, requires definition.
             </p>
             <p className="text-sm text-gray-600 leading-relaxed">
-              Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности
-              требуют определения и уточнения дальнейших направлений развития.
+              Higher-order strategic considerations, together with the further development of various forms of activity, 
+              require the definition and clarification of future directions for development.
             </p>
           </div>
 
           <div className="bg-gradient-to-br from-primary-400 to-primary-600 rounded-2xl p-8 flex flex-col justify-between gap-6 lg:flex-row lg:items-center">
             <div className="text-white flex-1 space-y-3">
               <p className="text-sm leading-relaxed opacity-95">
-                Разнообразный и богатый опыт сложившаяся структура организации требуют определения и
-                уточнения модели развития.
+                Our diverse experience and well-established organizational structure provide a strong foundation for continuous growth. 
+                We are committed to defining, refining, and improving our development model to support innovation, operational excellence, and long-term sustainable success.
               </p>
               <p className="text-sm leading-relaxed opacity-95">
-                Задача организации, в особенности же новая модель организационной деятельности требуют
-                определения и уточнения направлений прогрессивного развития.
+                The organization's objectives, and in particular its new model of organizational activity, require the definition and refinement of directions for progressive development.
               </p>
-              <p className="text-sm leading-relaxed opacity-95">Идейные соображения высшего порядка.</p>
+              <p className="text-sm leading-relaxed opacity-95">Higher-order strategic considerations.</p>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-2">
                 <input
                   type="tel"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  placeholder="Ваш телефон"
+                  placeholder="Your phone"
                   className="flex-1 px-4 py-2 rounded-full text-gray-900 text-sm focus:outline-none"
                 />
                 <button className="px-6 py-2 bg-white text-primary-600 font-bold text-xs rounded-full whitespace-nowrap hover:bg-gray-100">
-                  РЕГИСТРАЦИЯ
+                  Registration
                 </button>
               </div>
               <p className="text-[11px] text-primary-100">
-                Нажимая на кнопку, вы соглашаетесь на обработку{' '}
-                <Link to="/privacy" className="underline hover:text-white">персональных данных</Link>
+                By clicking the button, you agree to the processing of{' '}
+                <Link to="/privacy" className="underline hover:text-white">personal data</Link>
               </p>
             </div>
-            <img src={moneyIllustration} alt="Оплата" className="w-full max-w-[260px] object-contain mx-auto" />
+            <img src={moneyIllustration} alt="Payment" className="w-full max-w-[260px] object-contain mx-auto" />
           </div>
         </section>
 
-        {/* Оплата наличными */}
+        {/* Payment nalichnymi */}
         <section className="mb-14">
-          <h2 className="text-2xl font-bold mb-6">Оплата наличными</h2>
+          <h2 className="text-2xl font-bold mb-6">Cash payment</h2>
           <div className="grid md:grid-cols-2 gap-10">
             {cashPaymentFAQ.map((faq, index) => (
               <div key={index}>
@@ -145,16 +142,16 @@ const Privacy = () => {
           </div>
         </section>
 
-        {/* Оплата банковской картой */}
+        {/* Payment bankovskoy kartoy */}
         <section className="mb-14">
-          <h2 className="text-2xl font-bold mb-6">Оплата банковской картой</h2>
+          <h2 className="text-2xl font-bold mb-6">Payment by bank card</h2>
           <div className="grid md:grid-cols-2 gap-10">
             <div>
-              <h3 className="font-bold text-base mb-3">Какие платежные системы принимаются?</h3>
+              <h3 className="font-bold text-base mb-3">Which payment systems are accepted?</h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                Наличный расчет возможен при курьерской доставке, а также в пункте самовывоза. Оплата заказа
-                и доставки осуществляется непосредственно курьеру или кассиру в аптеке при получении заказа,
-                вместе с заказом вы получаете все необходимые документы и кассовый чек.
+                Cash payment is available for both courier delivery and in-store pickup. 
+                Payment is made directly to the courier upon delivery or to the cashier at the pharmacy when collecting your order.
+                Along with your order, you will receive all the necessary documents and a cash receipt.
               </p>
               <div className="grid grid-cols-5 gap-3">
                 {bankLogos.map((bank, index) => (
@@ -167,9 +164,7 @@ const Privacy = () => {
                 ))}
               </div>
               <p className="text-sm text-gray-600 leading-relaxed mt-6">
-                Копии сертификатов и лицензий предоставляются по предварительному запросу. Чтобы оплатить
-                заказ наличными при получении, при оформлении заказа выберите способ оплаты «Наличными» и
-                нажмите «Оформить заказ».
+                Copies of certificates and licenses are available upon request. To pay for your order in cash upon receipt, select the <b>"Cash"</b> payment method during checkout and click <b>"Place Order."</b>
               </p>
             </div>
 
@@ -179,43 +174,39 @@ const Privacy = () => {
                 <p key={i} className="text-sm text-gray-600 leading-relaxed mb-4">{p}</p>
               ))}
               <div className="flex items-center justify-center bg-primary-50 rounded-2xl p-6 mt-4">
-                <img src={securityIllustration} alt="Защита персональных данных" className="w-full max-w-[280px] object-contain" />
+                <img src={securityIllustration} alt="Zashchita personal data" className="w-full max-w-[280px] object-contain" />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Безналичный расчет для юр. лиц */}
+        {/* Beznalichnyy raschet for yur. lits */}
         <section className="mb-14">
-          <h2 className="text-2xl font-bold mb-6">Безналичный расчет для юридических лиц или ИП</h2>
+          <h2 className="text-2xl font-bold mb-6">Cashless Payment for Legal Entities and Individual Entrepreneurs</h2>
           <p className="text-sm text-gray-600 leading-relaxed mb-4 max-w-5xl">
-            Разнообразный и богатый опыт сложившаяся структура организации требует определения и уточнения
-            модели развития. Задача организации, в особенности же новая модель организационной деятельности
-            требует определения и уточнения направлений прогрессивного развития. Идейные соображения высшего
-            порядка, а также дальнейшее развитие различных форм деятельности требует определения и уточнения
-            дальнейших направлений развития.
+            Our diverse experience and well-established organizational structure require the definition and refinement of our development model. 
+            The organization's objectives, and in particular its new model of organizational activity, require the definition and clarification of directions for progressive development. 
+            Higher-order strategic considerations, together with the continued development of various forms of activity, require the definition and clarification of future directions for development.
           </p>
           <p className="text-sm text-gray-600 leading-relaxed max-w-5xl">
-            Разнообразный и богатый опыт постоянное информационно-пропагандистское обеспечение нашей
-            деятельности позволяет оценить значение модели развития. Задача организации, в особенности же
-            начало повседневной работы по формированию позиции способствует подготовки и реализации системы
-            обучения кадров, соответствует насущным потребностям.
+            Our diverse experience and continuous information and communication support for our activities enable us to assess the importance of our development model. 
+            The organization's objectives, and in particular the daily work of establishing a clear operational framework, support the preparation and implementation of a personnel training system that meets current needs.
           </p>
         </section>
 
         {/* Teal contact info banner */}
         <section className="bg-gradient-to-r from-primary-400 to-primary-600 rounded-2xl p-8 mb-8 text-center text-white">
           <p className="text-sm leading-relaxed max-w-3xl mx-auto">
-            Если возникнут вопросы, звоните на бесплатный номер{' '}
-            <a href="tel:88007772233" className="font-bold underline">8-800-777-22-33</a>, пишите на почту{' '}
-            <a href="mailto:info@restoll.ru" className="font-bold underline">info@restoll.ru</a>. Мы на связи по
-            будним дням с 9:00 до 18:00 часов, а по выходным с 12:00 до 16:00 часов.
+            If you have any questions, please call our toll-free number.{' '}
+            <a href="tel:88007772233" className="font-bold underline">8-800-777-22-33</a>, Please write down the email address.{' '}
+            <a href="mailto:info@restoll.ru" className="font-bold underline">info@restoll.ru</a>. We to svyazi on
+            We are available on weekdays from 9:00 to 18:00, and on weekends from 12:00 to 16:00.
           </p>
         </section>
 
-        {/* White "Остались вопросы?" form block */}
+        {/* White "Still have questions?" form block */}
         <section className="bg-white rounded-2xl shadow-sm p-8 mb-8">
-          <h3 className="text-xl font-bold mb-6">Остались вопросы?</h3>
+          <h3 className="text-xl font-bold mb-6">Still have questions?</h3>
           <form
             onSubmit={(e) => e.preventDefault()}
             className="flex flex-col md:flex-row gap-3 md:items-center"
@@ -224,7 +215,7 @@ const Privacy = () => {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Иванов Иван Иванович"
+              placeholder="Your Name"
               className="flex-1 px-4 py-3 border border-gray-200 rounded-full text-sm focus:border-primary-500 focus:outline-none"
             />
             <input
@@ -235,14 +226,14 @@ const Privacy = () => {
               className="flex-1 px-4 py-3 border border-gray-200 rounded-full text-sm focus:border-primary-500 focus:outline-none"
             />
             <p className="text-[11px] text-gray-400 shrink-0 md:max-w-[180px]">
-              Нажимая на кнопку, вы соглашаетесь на обработку{' '}
-              <Link to="/privacy" className="text-primary-500 hover:underline">персональных данных</Link>
+              By clicking the button, you agree to the processing of{' '}
+              <Link to="/privacy" className="text-primary-500 hover:underline">personal data</Link>
             </p>
             <button
               type="submit"
               className="px-6 py-3 bg-primary-500 text-white font-bold text-xs rounded-full whitespace-nowrap hover:bg-primary-600 transition"
             >
-              ЗАДАТЬ ВОПРОС
+              ASK A QUESTION
             </button>
           </form>
         </section>

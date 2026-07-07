@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+﻿import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { AppProvider } from './context/AppContext'
 import { CartProvider } from './context/CartContext'
@@ -135,16 +135,16 @@ function AppLayout() {
           <Route path="/license" element={<License />} />
           <Route path="/alphabet" element={<AlphabetSearch />} />
           <Route path="/privacy" element={<Privacy />} />
-<Route path="/terms" element={<StaticText title="Пользовательское соглашение" />} />
+<Route path="/terms" element={<StaticText title="Terms of Use" />} />
 <Route
   path="/franchise"
   element={
     <StaticText
-      title="Франшиза"
+      title="Franchise"
       paragraphs={[
-        'Мы предлагаем партнёрам готовую модель социальной аптеки: узнаваемый бренд, отлаженные бизнес-процессы, обучение персонала и поддержку на всех этапах запуска.',
-        'Франчайзинговый пакет включает помощь в выборе помещения, поставку ассортимента напрямую от производителей и дистрибьюторов, а также маркетинговую поддержку.',
-        'Чтобы получить презентацию франшизы и условия сотрудничества, напишите на info@restoll.ru или позвоните по телефону 8-800-777-22-33.',
+        'We predlagaem partneram gotovuyu model sotsialnoy apteki: uznavaemyy brend, otlazhennye biznes-protsessy, obuchenie personala and podderzhku to vsekh etapakh zapuska.',
+        'Franchayzingovyy paket vklyuchaet pomoshch in vybore pomeshcheniya, postavku assortimenta napryamuyu from proizvoditeley and distribyutorov, a also marketingovuyu podderzhku.',
+        'Chtoby poluchit prezentatsiyu franshizy and usloviya sotrudnichestva, napishite to info@restoll.ru or pozvonite on phone 8-800-777-22-33.',
       ]}
     />
   }

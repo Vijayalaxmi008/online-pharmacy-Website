@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+﻿import { useState, useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import { products } from '../data/products'
@@ -6,10 +6,10 @@ import { medicineCategories, moreMedicineCategories, diseases, subNavLinks } fro
 import { ChevronRight, ChevronDown, ArrowDownWideNarrow, ArrowUpWideNarrow, Sparkles, Flame } from 'lucide-react'
 
 const sortOptions = [
-  { key: 'price-asc', label: 'Сначала дешёвые', icon: ArrowDownWideNarrow },
-  { key: 'price-desc', label: 'Сначала дорогие', icon: ArrowUpWideNarrow },
-  { key: 'new', label: 'Новинки', icon: Sparkles },
-  { key: 'hits', label: 'Хиты продаж', icon: Flame },
+  { key: 'price-asc', label: 'Snachala deshevye', icon: ArrowDownWideNarrow },
+  { key: 'price-desc', label: 'Snachala dorogie', icon: ArrowUpWideNarrow },
+  { key: 'new', label: 'Novinki', icon: Sparkles },
+  { key: 'hits', label: 'Khity prodazh', icon: Flame },
 ]
 
 const Catalog = () => {
@@ -36,18 +36,18 @@ const Catalog = () => {
       <div className="container mx-auto px-4 py-6">
         {/* Breadcrumb */}
         <div className="text-xs text-gray-500 mb-3 flex items-center gap-1">
-          <Link to="/" className="hover:text-primary-500">Главная</Link>
+          <Link to="/" className="hover:text-primary-500">Home</Link>
           <ChevronRight size={12} />
-          <span className="text-gray-700">Лекарственные средства</span>
+          <span className="text-gray-700">Medicines</span>
         </div>
 
-        <h1 className="text-2xl font-bold mb-4 text-gray-900">Лекарственные средства</h1>
+        <h1 className="text-2xl font-bold mb-4 text-gray-900">Medicines</h1>
 
         <div className="flex gap-4">
           {/* Sidebar */}
           <aside className="hidden lg:block w-64 shrink-0 space-y-4">
             <div className="bg-white rounded-2xl p-4 shadow-sm">
-              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">КАТЕГОРИИ</h3>
+              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">name</h3>
               <ul className="space-y-2 text-sm">
                 {medicineCategories.map(cat => (
                   <li key={cat.slug}>
@@ -78,13 +78,13 @@ const Catalog = () => {
                 onClick={() => setShowAllCategories(v => !v)}
                 className="text-primary-500 text-xs font-bold mt-3 flex items-center gap-1"
               >
-                {showAllCategories ? 'Скрыть' : 'Все категории'}
+                {showAllCategories ? 'Skryt' : 'All categories'}
                 <ChevronDown size={12} className={showAllCategories ? 'rotate-180 transition' : 'transition'} />
               </button>
             </div>
 
             <div className="bg-white rounded-2xl p-4 shadow-sm">
-              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">ЗАБОЛЕВАНИЯ</h3>
+              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">CONDITIONS</h3>
               <ul className="space-y-1.5 text-sm text-gray-700">
                 {(showAllDiseases ? diseases : diseases.slice(0, 8)).map(d => (
                   <li key={d} className="hover:text-primary-500 cursor-pointer">{d}</li>
@@ -94,13 +94,13 @@ const Catalog = () => {
                 onClick={() => setShowAllDiseases(v => !v)}
                 className="text-primary-500 text-xs font-bold mt-3 flex items-center gap-1"
               >
-                {showAllDiseases ? 'Скрыть' : `Ещё ${diseases.length - 8}`}
+                {showAllDiseases ? 'Skryt' : `again ${diseases.length - 8}`}
                 <ChevronDown size={12} className={showAllDiseases ? 'rotate-180 transition' : 'transition'} />
               </button>
             </div>
 
             <div className="bg-white rounded-2xl p-4 shadow-sm">
-              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">ЦЕНА</h3>
+              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">Tsena</h3>
               <input
                 type="range"
                 min="0"
@@ -111,13 +111,13 @@ const Catalog = () => {
                 className="w-full accent-primary-500 mb-2"
               />
               <div className="flex justify-between text-xs text-gray-500">
-                <span>0 руб.</span>
-                <span className="font-medium text-gray-700">до {maxPrice.toLocaleString('ru-RU')} руб.</span>
+                <span>0 RUB</span>
+                <span className="font-medium text-gray-700">up to {maxPrice.toLocaleString('en-US')} RUB</span>
               </div>
             </div>
 
             <div className="bg-white rounded-2xl p-4 shadow-sm">
-              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">НАЛИЧИЕ</h3>
+              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">Nalichie</h3>
               <label className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
                 <input
                   type="checkbox"
@@ -125,7 +125,7 @@ const Catalog = () => {
                   onChange={(e) => setInStockOnly(e.target.checked)}
                   className="accent-primary-500 w-4 h-4"
                 />
-                Только в наличии
+                only in nalichii
               </label>
             </div>
           </aside>
@@ -153,7 +153,7 @@ const Catalog = () => {
                   {opt.label}
                 </button>
               ))}
-              <span className="ml-auto text-xs text-gray-400 hidden sm:inline">Найдено: {filtered.length}</span>
+              <span className="ml-auto text-xs text-gray-400 hidden sm:inline">Naydeno: {filtered.length}</span>
             </div>
 
             {/* Product grid */}
@@ -170,17 +170,17 @@ const Catalog = () => {
               ))}
             </div>
 
-            {/* Акция месяца */}
+            {/* Aktsiya mesyatsa */}
             <section className="mt-10">
-              <h2 className="text-lg font-bold text-gray-900 mb-3">Акция месяца</h2>
+              <h2 className="text-lg font-bold text-gray-900 mb-3">Aktsiya mesyatsa</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3">
                 {products.slice(0, 4).map(p => <ProductCard key={`promo-${p.id}`} product={p} />)}
               </div>
             </section>
 
-            {/* Вы смотрели */}
+            {/* Vy smotreli */}
             <section className="mt-10">
-              <h2 className="text-lg font-bold text-gray-900 mb-3">Вы смотрели</h2>
+              <h2 className="text-lg font-bold text-gray-900 mb-3">Vy smotreli</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3">
                 {products.slice(2, 6).map(p => <ProductCard key={`viewed-${p.id}`} product={p} />)}
               </div>
@@ -189,12 +189,12 @@ const Catalog = () => {
             {/* SEO text */}
             <section className="mt-10 bg-white rounded-2xl p-6 shadow-sm text-xs text-gray-500 leading-relaxed grid md:grid-cols-2 gap-6">
               <p>
-                Купить лекарства в Москве и области с доставкой можно в нашей онлайн-аптеке. Широкий ассортимент
-                препаратов от проверенных производителей, доступные цены и быстрая доставка по всей России.
+                Kupit lekarstva in Moskve and oblasti with dostavkoy mozhno in nashey online-apteke. Shirokiy assortiment
+                preparatov from proverennykh proizvoditeley, dostupnye prices and bystraya dostavka on vsey Rossii.
               </p>
               <p>
-                Мы гарантируем подлинность всех товаров — каждый препарат имеет сертификат соответствия. Оформите
-                заказ на сайте или заберите его самостоятельно в ближайшей аптеке партнёрской сети.
+                We garantiruem podlinnost vsekh products — kazhdyy medicine imeet sertifikat sootvetstviya. Oformite
+                zakaz to sayte or zaberite ego samostoyatelno in blizhayshey apteke partnerskoy seti.
               </p>
             </section>
           </div>

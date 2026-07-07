@@ -9,161 +9,164 @@ import equipmentImg from '../assets/images/Categories/tablet.png'
 import hygieneImg from '../assets/images/Categories/serum.png'
 
 export const categories = [
-  { id: 1, name: 'Лекарства', slug: 'medicines', image: medicinesImg },
-  { id: 2, name: 'Витамины и БАД', slug: 'vitamins', image: vitaminsImg },
-  { id: 3, name: 'Красота', slug: 'cosmetics', image: cosmeticsImg },
-  { id: 4, name: 'Мать и дитя', slug: 'baby', image: babyImg },
-  { id: 5, name: 'Медтехника', slug: 'equipment', image: equipmentImg },
-  { id: 6, name: 'Гигиена', slug: 'hygiene', image: hygieneImg },
+  { id: 1, name: 'Medicines', slug: 'medicines', image: medicinesImg },
+  { id: 2, name: 'Vitamins and Supplements', slug: 'vitamins', image: vitaminsImg },
+  { id: 3, name: 'Beauty', slug: 'cosmetics', image: cosmeticsImg },
+  { id: 4, name: 'Mother and Baby', slug: 'baby', image: babyImg },
+  { id: 5, name: 'Medical Equipment', slug: 'equipment', image: equipmentImg },
+  { id: 6, name: 'Hygiene', slug: 'hygiene', image: hygieneImg },
 ]
 
 export const mainNavCategories = [
-  { name: 'ЛЕКАРСТВА', slug: 'medicines', icon: Pill },
-  { name: 'ВИТАМИНЫ И БАД', slug: 'vitamins', icon: FlaskConical },
-  { name: 'КРАСОТА', slug: 'cosmetics', icon: Sparkles },
-  { name: 'ГИГИЕНА', slug: 'hygiene', icon: Users },
-  { name: 'ЛИНЗЫ', slug: 'lenses', icon: Eye },
-  { name: 'МАТЬ И ДИТЯ', slug: 'baby', icon: Baby },
-  { name: 'МЕДТОВАРЫ', slug: 'medical', icon: Stethoscope },
-  { name: 'ЗООТОВАРЫ', slug: 'pets', icon: PawPrint },
-  { name: 'МЕДТЕХНИКА', slug: 'equipment', icon: Activity },
+  { name: 'MEDICINES', slug: 'medicines', icon: Pill },
+  { name: 'VITAMINS AND SUPPLEMENTS', slug: 'vitamins', icon: FlaskConical },
+  { name: 'BEAUTY', slug: 'cosmetics', icon: Sparkles },
+  { name: 'HYGIENE', slug: 'hygiene', icon: Users },
+  { name: 'LENSES', slug: 'lenses', icon: Eye },
+  { name: 'MOTHER AND BABY', slug: 'baby', icon: Baby },
+  { name: 'MEDICAL SUPPLIES', slug: 'medical', icon: Stethoscope },
+  { name: 'PET SUPPLIES', slug: 'pets', icon: PawPrint },
+  { name: 'MEDICAL EQUIPMENT', slug: 'equipment', icon: Activity },
 ]
 
 export const subNavLinks = [
-  'Акции', 'Скидки', 'COVID-19', 'Аллергия', 'Лечебная косметика',
-  'Кишечник', 'Молочница', 'Суставы', 'Еще 52',
+  'Promotions', 'Discounts', 'COVID-19', 'Allergy', 'Dermocosmetics',
+  'Digestion', 'Women\'s health', 'Joints', 'More 52',
 ]
 
 export const medicineCategories = [
-  { name: 'Акушерство, гинекология', slug: 'obstetrics' },
-  { name: 'Аллергия', slug: 'allergy' },
-  { name: 'Анестезия, реанимация', slug: 'anesthesia', active: true, 
-    subcategories: ['Местные обезболивающие', 'Питание в реанимации', 'Растворы', 'Средства для наркоза']
+  { name: 'Obstetrics and gynecology', slug: 'obstetrics' },
+  { name: 'Allergy', slug: 'allergy' },
+  {
+    name: 'Anesthesia and intensive care',
+    slug: 'anesthesia',
+    active: true,
+    subcategories: ['Local pain relief', 'Intensive care nutrition', 'Solutions', 'Anesthesia products'],
   },
-  { name: 'Антибиотики', slug: 'antibiotics' },
-  { name: 'Болезни крови', slug: 'blood' },
-  { name: 'Боль, температура', slug: 'pain' },
-  { name: 'Геморрой', slug: 'hemorrhoids' },
-  { name: 'Глаза', slug: 'eyes' },
-  { name: 'Глисты, вши, чесотка', slug: 'parasites' },
-  { name: 'Гомеопатия', slug: 'homeopathy' },
-  { name: 'Диабет', slug: 'diabetes' },
-  { name: 'Диагностические средства', slug: 'diagnostics' },
-  { name: 'Дыхательная система', slug: 'respiratory' },
-  { name: 'Желудок, кишечник, печень', slug: 'gastro' },
-  { name: 'Зубы и рот', slug: 'dental' },
+  { name: 'Antibiotics', slug: 'antibiotics' },
+  { name: 'Blood disorders', slug: 'blood' },
+  { name: 'Pain and fever', slug: 'pain' },
+  { name: 'Hemorrhoids', slug: 'hemorrhoids' },
+  { name: 'Eyes', slug: 'eyes' },
+  { name: 'Parasites and lice', slug: 'parasites' },
+  { name: 'Homeopathy', slug: 'homeopathy' },
+  { name: 'Diabetes', slug: 'diabetes' },
+  { name: 'Diagnostic products', slug: 'diagnostics' },
+  { name: 'Respiratory system', slug: 'respiratory' },
+  { name: 'Stomach, intestines and liver', slug: 'gastro' },
+  { name: 'Teeth and mouth', slug: 'dental' },
 ]
 
 export const moreMedicineCategories = [
-  'Кожа', 'Мочеполовая система', 'Нарушения обмена веществ',
-  'Неврология, психиатрия', 'Обеззараживающие средства', 'Онкология',
-  'Отравления', 'Питательные смеси', 'Противовирусные средства',
-  'Противогрибковые средства', 'Разное', 'Сердечно-сосудистые',
-  'Трихомоноз и малярия', 'Ухо, горло, нос', 'Эндокринология',
+  'Skin', 'Urinary system', 'Metabolic disorders',
+  'Neurology and psychiatry', 'Disinfectants', 'Oncology',
+  'Poisoning', 'Nutrition formulas', 'Antiviral products',
+  'Antifungal products', 'Other', 'Cardiovascular',
+  'Trichomoniasis and malaria', 'Ear, nose and throat', 'Endocrinology',
 ]
 
 export const diseases = [
-  'Аллергия', 'Алопеция/Выпадение волос', 'Аптечка', 'Болезни суставов',
-  'Гайморит', 'Диабет', 'Здоровый бег', 'Зрение', 'Избыточный вес',
-  'Изжога', 'Корейская косметика', 'Раздраженная кожа',
-  'Раздраженный кишечник', 'Сон и бессонница', 'Стоматит',
+  'Allergy', 'Alopecia and hair loss', 'First aid kit', 'Joint conditions',
+  'Sinusitis', 'Diabetes', 'Healthy running', 'Vision', 'Excess weight',
+  'Heartburn', 'Korean cosmetics', 'Irritated skin',
+  'Irritable bowel', 'Sleep and insomnia', 'Stomatitis',
 ]
 
 export const servicePages = [
   {
-    title: 'ИНТЕРНЕТ-ЗАКАЗ',
-    items: ['Каталог', 'Как сделать заказ', 'Блог о здоровье', 'Вопросы и ответы', 'Корзина'],
-    activeItem: 'Вопросы и ответы',
+    title: 'ONLINE ORDER',
+    items: ['Catalog', 'How to place an order', 'Health blog', 'Questions and answers', 'Cart'],
+    activeItem: 'Questions and answers',
   },
   {
-    title: 'ПОКУПАТЕЛЯМ',
-    items: ['Бонусные карты', 'Партнеры в Европе', 'Подарочные сертификаты', 'Заказ редкого лекарства', 'Оставить отзыв'],
+    title: 'CUSTOMERS',
+    items: ['Bonus cards', 'Partners in Europe', 'Gift certificates', 'Rare medicine request', 'Leave a review'],
   },
   {
-    title: 'О КОМПАНИИ',
-    items: ['Общая информация', 'Новости', 'Статьи', 'Аптека Сервис Плюс', 'Вакансии', 'Журнал', 'Контакты'],
+    title: 'ABOUT THE COMPANY',
+    items: ['General information', 'News', 'Articles', 'Pharmacy Service Plus', 'Careers', 'Journal', 'Contacts'],
   },
   {
-    title: 'АПТЕКИ',
-    items: ['Каталог', 'Как сделать заказ', 'Вопросы и ответы', 'Корзина'],
+    title: 'PHARMACIES',
+    items: ['Catalog', 'How to place an order', 'Questions and answers', 'Cart'],
   },
   {
-    title: 'ПАРТНЕРАМ',
-    items: ['Арендодателям', 'Рекламодателям', 'Юридическим лицам'],
+    title: 'PARTNERS',
+    items: ['Landlords', 'Advertisers', 'Corporate customers'],
   },
   {
-    title: 'ПРОЕКТЫ И АКЦИИ',
-    items: ['Проекты', 'Акции'],
+    title: 'PROJECTS AND PROMOTIONS',
+    items: ['Projects', 'Promotions'],
   },
 ]
 
 export const partnerLogos = [
-  'ОТП Банк', 'BNP Paribas', 'QIWI', 'Райффайзен Банк', 'PayPal', 'МТС Банк',
-  'Ziraat Bank', 'Восточный Банк', 'ВТБ', 'Севергазбанк', 'ЮMoney', 'ВБРР',
+  'OTP Bank', 'BNP Paribas', 'QIWI', 'Raiffeisen Bank', 'PayPal', 'MTS Bank',
+  'Ziraat Bank', 'Vostochny Bank', 'VTB', 'Severgazbank', 'YooMoney', 'VBRR',
 ]
 
 export const features = [
-  { id: 1, title: 'Ассортимент', desc: 'Акции, витамины, лекарства, медтехника и косметика' },
-  { id: 2, title: 'Быстрая доставка', desc: 'В любую точку России в быстрые сроки' },
-  { id: 3, title: 'Гарантия', desc: 'Все товары сертифицированы' },
-  { id: 4, title: 'Низкие цены', desc: 'Мы стараемся держать минимальные цены для наших клиентов' },
+  { id: 1, title: 'Assortment', desc: 'Promotions, vitamins, medicines, medical equipment and cosmetics' },
+  { id: 2, title: 'Fast delivery', desc: 'Fast delivery to locations across the country' },
+  { id: 3, title: 'Quality guarantee', desc: 'All products are certified' },
+  { id: 4, title: 'Low prices', desc: 'We work to keep prices affordable for our customers' },
 ]
 
 export const reviews = [
-  { id: 1, name: 'Лена, Москва', date: '12 Октября', rating: 5, text: 'Грамотные сотрудники, чуткое отношение к покупателю, всегда приятно делать заказ и возвращаться к вам снова. Заказывала мужу Креон и не пожалела, доставили за час. Спасибо большое за вашу работу!' },
-  { id: 2, name: 'Лена, Москва', date: '05 Октября', rating: 5, text: 'Спасибо большое за быструю доставку, всё в целости и сохранности. Покупали маме Креон, очень помог.' },
-  { id: 3, name: 'Алексей', date: '01 Октября', rating: 4, text: 'Хороший сервис, быстрая доставка. Цены немного выше, чем в обычных аптеках, но удобство того стоит.' },
-  { id: 4, name: 'Мария', date: '28 Сентября', rating: 5, text: 'Очень довольна сервисом! Заказывала витамины, привезли быстро и в отличном состоянии. Спасибо!' },
+  { id: 1, name: 'Lena, Moscow', date: 'October 12', rating: 5, text: 'Knowledgeable staff, attentive service and a smooth ordering experience. Delivery was quick and everything arrived in good condition.' },
+  { id: 2, name: 'Lena, Moscow', date: 'October 5', rating: 5, text: 'Thank you for the fast delivery. The order arrived complete and well packed.' },
+  { id: 3, name: 'Alex', date: 'October 1', rating: 4, text: 'Good service and quick delivery. The convenience is worth it.' },
+  { id: 4, name: 'Maria', date: 'September 28', rating: 5, text: 'Very happy with the service. My vitamins arrived quickly and in excellent condition.' },
 ]
 
 export const howItWorks = [
-  { step: 1, title: 'Выберите товар', desc: 'Воспользуйтесь поиском, чтобы найти необходимый товар' },
-  { step: 2, title: 'Выберите аптеку', desc: 'Выберите аптеку, из которой вам будет удобно забрать заказ' },
-  { step: 3, title: 'Оформите заказ', desc: 'Следуйте инструкциям и завершите оформление заказа' },
-  { step: 4, title: 'Получите заказ', desc: 'Заберите заказ в ближайшей к Вам аптеке' },
+  { step: 1, title: 'Choose a product', desc: 'Use search to find the product you need' },
+  { step: 2, title: 'Choose a pharmacy', desc: 'Select the pickup point that is most convenient for you' },
+  { step: 3, title: 'Place your order', desc: 'Follow the steps and complete checkout' },
+  { step: 4, title: 'Receive your order', desc: 'Pick up your order at a nearby pharmacy' },
 ]
 
 export const aboutParagraphs = [
-  'Сеть аптек «Аптека.онлайн» работает с 2000 года и объединяет несколько сотен аптечных пунктов по всей России. Мы сотрудничаем напрямую с производителями и дистрибьюторами, что позволяет нам предлагать лекарства по доступным ценам без потери качества.',
-  'Каждый товар, представленный в нашем каталоге, сопровождается сертификатом соответствия. Мы работаем только с проверенными поставщиками и строго следим за условиями хранения и транспортировки медикаментов.',
-  'Заказать лекарства можно онлайн с доставкой на дом или самовывозом из ближайшей аптеки. Наша служба поддержки на связи ежедневно, чтобы помочь с подбором аналогов и ответить на любые вопросы о наличии товара.',
+  'The Pharmacy.online network has operated since 2000 and brings together hundreds of pharmacy locations. We work directly with manufacturers and distributors so customers can buy trusted medicines at affordable prices.',
+  'Every product in our catalog is supported by quality documentation. We work with verified suppliers and carefully monitor storage and transportation conditions.',
+  'You can order medicines online for home delivery or pickup from a nearby pharmacy. Our support team is available every day to help with product selection, alternatives and stock questions.',
 ]
 
 export const alphabetCategoryGroups = [
   {
-    title: 'Лекарства', slug: 'medicines',
-    items: ['Акушерство, гинекология', 'Аллергия', 'Антибиотики', 'Боль, температура', 'Диабет', 'Желудок, кишечник, печень'],
+    title: 'Medicines', slug: 'medicines',
+    items: ['Obstetrics and gynecology', 'Allergy', 'Antibiotics', 'Pain and fever', 'Diabetes', 'Stomach, intestines and liver'],
   },
   {
-    title: 'Витамины и БАД', slug: 'vitamins',
-    items: ['Аминокислоты', 'Антиоксиданты', 'Поливитамины', 'БАД для иммунитета', 'Витамины для беременных', 'БАД при простуде'],
+    title: 'Vitamins and Supplements', slug: 'vitamins',
+    items: ['Amino acids', 'Antioxidants', 'Multivitamins', 'Immune supplements', 'Prenatal vitamins', 'Cold season supplements'],
   },
   {
-    title: 'Красота', slug: 'cosmetics',
-    items: ['Уход за лицом', 'Уход за телом', 'Уход за волосами', 'Солнцезащита', 'Аптечная косметика', 'Корейская косметика'],
+    title: 'Beauty', slug: 'cosmetics',
+    items: ['Face care', 'Body care', 'Hair care', 'Sun protection', 'Pharmacy cosmetics', 'Korean cosmetics'],
   },
   {
-    title: 'Гигиена', slug: 'hygiene',
-    items: ['Средства для душа', 'Уход за полостью рта', 'Гигиенические прокладки', 'Подгузники', 'Антисептики', 'Влажные салфетки'],
+    title: 'Hygiene', slug: 'hygiene',
+    items: ['Shower products', 'Oral care', 'Hygiene pads', 'Diapers', 'Antiseptics', 'Wet wipes'],
   },
   {
-    title: 'Мать и дитя', slug: 'baby',
-    items: ['Питание для малышей', 'Подгузники и пеленки', 'Уход за малышом', 'Товары для кормления', 'Игрушки и развитие'],
+    title: 'Mother and Baby', slug: 'baby',
+    items: ['Baby food', 'Diapers and changing', 'Baby care', 'Feeding products', 'Toys and development'],
   },
   {
-    title: 'Медтовары', slug: 'medical',
-    items: ['Бинты и пластыри', 'Компрессионное белье', 'Ортопедические изделия', 'Средства для реабилитации', 'Медицинская одежда'],
+    title: 'Medical Supplies', slug: 'medical',
+    items: ['Bandages and plasters', 'Compression wear', 'Orthopedic products', 'Rehabilitation products', 'Medical clothing'],
   },
   {
-    title: 'Линзы', slug: 'lenses',
-    items: ['Контактные линзы', 'Растворы для линз', 'Очки и оправы', 'Средства по уходу за глазами'],
+    title: 'Lenses', slug: 'lenses',
+    items: ['Contact lenses', 'Lens solutions', 'Glasses and frames', 'Eye care products'],
   },
   {
-    title: 'Зоотовары', slug: 'pets',
-    items: ['Витамины для животных', 'Антипаразитарные средства', 'Корма лечебные', 'Уход за животными'],
+    title: 'Pet Supplies', slug: 'pets',
+    items: ['Pet vitamins', 'Antiparasitic products', 'Therapeutic food', 'Pet care'],
   },
   {
-    title: 'Медтехника', slug: 'equipment',
-    items: ['Тонометры', 'Термометры', 'Небулайзеры', 'Глюкометры', 'Средства реабилитации'],
+    title: 'Medical Equipment', slug: 'equipment',
+    items: ['Blood pressure monitors', 'Thermometers', 'Nebulizers', 'Glucose meters', 'Rehabilitation equipment'],
   },
 ]

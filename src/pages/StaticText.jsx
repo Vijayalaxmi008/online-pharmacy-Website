@@ -1,30 +1,26 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 
-const StaticText = ({ title = 'Информация' }) => (
+const StaticText = ({ title = 'Information' }) => (
   <div className="container mx-auto px-4 py-6">
     <p className="text-xs text-gray-500 mb-2">
-      <Link to="/" className="hover:text-primary-500">Главная</Link> / {title}
+      <Link to="/" className="hover:text-primary-500">Home</Link> / {title}
     </p>
     <h1 className="text-2xl font-bold mb-4">{title}</h1>
 
     <div className="bg-white rounded-2xl shadow-sm p-5 text-sm text-gray-600 leading-relaxed space-y-3">
       <p>
-        Настоящий документ регулирует порядок обработки и использования персональных данных
-        пользователей сайта «Аптека.онлайн». Продолжая использовать сайт, вы соглашаетесь с
-        условиями, изложенными ниже.
+       This document governs the processing and use of users' personal data on the Pharmacy.online website. 
+       By continuing to use the website, you agree to the terms set out below.
       </p>
       <p>
-        Мы собираем только те данные, которые необходимы для оформления и доставки заказа:
-        имя, номер телефона, адрес электронной почты и адрес доставки. Эти данные не передаются
-        третьим лицам, за исключением случаев, предусмотренных законодательством РФ.
+       We collect only the information necessary to process and deliver your order, including your name, phone number, email address, and delivery address. 
+       This information is not shared with third parties except as required by the laws of the Russian Federation.
       </p>
       <p>
-        Пользователь вправе в любой момент запросить удаление своих персональных данных,
-        обратившись в службу поддержки по телефону 8-800-777-22-33 или на почту info@restoll.ru.
+       Users have the right to request the deletion of their personal data at any time by contacting our support team by phone at 8-800-777-22-33 or by email at [info@restoll.ru](mailto:info@restoll.ru).
       </p>
       <p>
-        Сайт использует файлы cookie для улучшения работы сервиса и персонализации контента.
-        Продолжая пользоваться сайтом, вы даёте согласие на использование cookie-файлов.
+        This website uses cookies to improve our services and personalize content. By continuing to use the website, you consent to the use of cookies.
       </p>
     </div>
   </div>

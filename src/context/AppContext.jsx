@@ -4,7 +4,7 @@ const AppContext = createContext()
 export const useApp = () => useContext(AppContext)
 
 export const AppProvider = ({ children }) => {
-  const [city, setCity] = useState(() => localStorage.getItem('city') || 'Москва и область')
+  const [city, setCity] = useState(() => localStorage.getItem('city') || 'Moscow and region')
   const [user, setUser] = useState(() => {
     const saved = localStorage.getItem('user')
     return saved ? JSON.parse(saved) : null
