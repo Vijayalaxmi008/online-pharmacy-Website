@@ -17,14 +17,14 @@ const CallbackModal = ({ onClose, title = 'We will call you back.' }) => {
         {sent ? (
           <div className="text-center py-8">
             <div className="text-5xl mb-4">✅</div>
-            <h2 className="text-2xl font-bold mb-2">Thank you for zayavku!</h2>
-            <p className="text-gray-500">We skoro svyazhemsya with vami</p>
+            <h2 className="text-2xl font-bold mb-2">Thank you for your application!</h2>
+            <p className="text-gray-500">We will contact you shortly.</p>
           </div>
         ) : (
           <>
             <h2 className="text-xl font-bold mb-3">{title}</h2>
             <p className="text-sm text-gray-600 mb-4">
-              Ostavte vashi data and we svyazhemsya with vami
+              Leave your details, and we will contact you.
             </p>
             <form onSubmit={submit} className="space-y-3">
               <input required type="text" placeholder="YEnter Your name" value={form.name}
@@ -34,7 +34,7 @@ const CallbackModal = ({ onClose, title = 'We will call you back.' }) => {
                 onChange={e => setForm({...form, phone: e.target.value})}
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-full focus:border-green-600 focus:outline-none" />
               <button type="submit" className="w-full bg-green-600 text-white font-bold py-3 rounded-full hover:bg-green-700">
-                Perezvonite Mne
+                Call Me Back
               </button>
             </form>
           </>
