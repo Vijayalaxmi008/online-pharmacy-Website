@@ -363,7 +363,7 @@ const Advertising = () => {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Your name"
+                    placeholder="Enter Your name"
                     className="px-4 py-3 border border-gray-200 rounded-lg text-sm focus:border-primary-500 focus:outline-none"
                   />
                   <input

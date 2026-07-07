@@ -6,10 +6,10 @@ import { medicineCategories, moreMedicineCategories, diseases, subNavLinks } fro
 import { ChevronRight, ChevronDown, ArrowDownWideNarrow, ArrowUpWideNarrow, Sparkles, Flame } from 'lucide-react'
 
 const sortOptions = [
-  { key: 'price-asc', label: 'Snachala deshevye', icon: ArrowDownWideNarrow },
-  { key: 'price-desc', label: 'Snachala dorogie', icon: ArrowUpWideNarrow },
-  { key: 'new', label: 'Novinki', icon: Sparkles },
-  { key: 'hits', label: 'Khity prodazh', icon: Flame },
+  { key: 'price-asc', label: 'Lowest price first', icon: ArrowDownWideNarrow },
+  { key: 'price-desc', label: 'Highest price first', icon: ArrowUpWideNarrow },
+  { key: 'new', label: 'New arrivals', icon: Sparkles },
+  { key: 'hits', label: 'Bestsellers', icon: Flame },
 ]
 
 const Catalog = () => {
@@ -100,7 +100,7 @@ const Catalog = () => {
             </div>
 
             <div className="bg-white rounded-2xl p-4 shadow-sm">
-              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">Tsena</h3>
+              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">Price</h3>
               <input
                 type="range"
                 min="0"
@@ -117,7 +117,7 @@ const Catalog = () => {
             </div>
 
             <div className="bg-white rounded-2xl p-4 shadow-sm">
-              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">Nalichie</h3>
+              <h3 className="font-bold text-xs tracking-wide text-gray-400 mb-3">Availability</h3>
               <label className="flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
                 <input
                   type="checkbox"
@@ -125,7 +125,7 @@ const Catalog = () => {
                   onChange={(e) => setInStockOnly(e.target.checked)}
                   className="accent-primary-500 w-4 h-4"
                 />
-                only in nalichii
+                In stock only
               </label>
             </div>
           </aside>
@@ -153,7 +153,7 @@ const Catalog = () => {
                   {opt.label}
                 </button>
               ))}
-              <span className="ml-auto text-xs text-gray-400 hidden sm:inline">Naydeno: {filtered.length}</span>
+              <span className="ml-auto text-xs text-gray-400 hidden sm:inline">Found: {filtered.length}</span>
             </div>
 
             {/* Product grid */}
@@ -172,7 +172,7 @@ const Catalog = () => {
 
             {/* Aktsiya mesyatsa */}
             <section className="mt-10">
-              <h2 className="text-lg font-bold text-gray-900 mb-3">Aktsiya mesyatsa</h2>
+              <h2 className="text-lg font-bold text-gray-900 mb-3">Promotion of the Month</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3">
                 {products.slice(0, 4).map(p => <ProductCard key={`promo-${p.id}`} product={p} />)}
               </div>
@@ -180,7 +180,7 @@ const Catalog = () => {
 
             {/* Vy smotreli */}
             <section className="mt-10">
-              <h2 className="text-lg font-bold text-gray-900 mb-3">Vy smotreli</h2>
+              <h2 className="text-lg font-bold text-gray-900 mb-3">You viewed</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3">
                 {products.slice(2, 6).map(p => <ProductCard key={`viewed-${p.id}`} product={p} />)}
               </div>
@@ -189,12 +189,12 @@ const Catalog = () => {
             {/* SEO text */}
             <section className="mt-10 bg-white rounded-2xl p-6 shadow-sm text-xs text-gray-500 leading-relaxed grid md:grid-cols-2 gap-6">
               <p>
-                Kupit lekarstva in Moskve and oblasti with dostavkoy mozhno in nashey online-apteke. Shirokiy assortiment
-                preparatov from proverennykh proizvoditeley, dostupnye prices and bystraya dostavka on vsey Rossii.
+                Buy medicines in Moscow and the surrounding region with home delivery through our online pharmacy. 
+                We offer a wide range of medicines from trusted manufacturers, affordable prices, and fast delivery throughout Russia.
               </p>
               <p>
-                We garantiruem podlinnost vsekh products — kazhdyy medicine imeet sertifikat sootvetstviya. Oformite
-                zakaz to sayte or zaberite ego samostoyatelno in blizhayshey apteke partnerskoy seti.
+                We guarantee the authenticity of all our products—every medicine is certified for quality and compliance. 
+                Place your order online or collect it from the nearest pharmacy in our partner network.
               </p>
             </section>
           </div>

@@ -15,7 +15,7 @@ const QuestionsCTA = () => {
           >
             <input
               type="text"
-              placeholder="John Smith"
+              placeholder="Your Name"
               className="flex-1 px-3 py-2 rounded-full text-gray-900 text-sm focus:outline-none"
             />
 

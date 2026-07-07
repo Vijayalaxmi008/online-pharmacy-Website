@@ -16,7 +16,7 @@ import reviewThree from '../assets/images/Categories/ladyAvacado.jpg'
 
 
 const ALPHABET_RU = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
-const ALPHABET_EN = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+const ALPHABET_EN = 'abcdefghijklmnopqrstuvwxyz'.split('')
 
 const FEATURES = [
   { icon: Package, title: 'Assortment', desc: 'Promotions, vitamins, medicines, equipment and cosmetics' },

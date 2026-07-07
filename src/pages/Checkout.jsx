@@ -87,7 +87,7 @@ const Checkout = () => {
                 <input
                   value={form.name}
                   onChange={(e) => updateField('name', e.target.value)}
-                  placeholder="Your name *"
+                  placeholder="Enter Your name *"
                   className={`w-full px-3 py-2.5 border-2 rounded-full text-sm focus:outline-none ${errors.name ? 'border-red-400' : 'border-gray-200 focus:border-primary-500'}`}
                 />
                 {errors.name && <p className="flex items-center gap-1 text-red-500 text-xs mt-1 ml-3"><AlertCircle size={12} />{errors.name}</p>}

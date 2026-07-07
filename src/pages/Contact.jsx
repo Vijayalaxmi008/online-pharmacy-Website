@@ -66,7 +66,7 @@ const Contact = () => {
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="John Smith"
+              placeholder="Your Name"
               className="w-full px-3 py-2 border-2 border-gray-200 rounded-full focus:border-primary-500 focus:outline-none"
             />
             <input

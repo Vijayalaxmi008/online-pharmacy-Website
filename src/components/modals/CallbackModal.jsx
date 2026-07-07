@@ -27,7 +27,7 @@ const CallbackModal = ({ onClose, title = 'We vam perezvonim' }) => {
               Ostavte vashi data and we svyazhemsya with vami
             </p>
             <form onSubmit={submit} className="space-y-3">
-              <input required type="text" placeholder="Your name" value={form.name}
+              <input required type="text" placeholder="YEnter Your name" value={form.name}
                 onChange={e => setForm({...form, name: e.target.value})}
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-full focus:border-green-600 focus:outline-none" />
               <input required type="tel" placeholder="Phone" value={form.phone}

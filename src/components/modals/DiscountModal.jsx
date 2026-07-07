@@ -24,7 +24,7 @@ const DiscountModal = ({ onClose }) => {
               Ostavte vashi data and we svyazhemsya with vami. We not zanimaemsya rassylkoy reklamnykh soobshcheniy, a tak zhe not peredaem kontaktnye data third parties
             </p>
             <form onSubmit={submit} className="space-y-3">
-              <input required placeholder="Your name" className="w-full px-4 py-3 border-2 border-gray-200 rounded-full focus:border-brand-green focus:outline-none" />
+              <input required placeholder="Enter Your name" className="w-full px-4 py-3 border-2 border-gray-200 rounded-full focus:border-brand-green focus:outline-none" />
               <input required type="tel" placeholder="Phone" className="w-full px-4 py-3 border-2 border-gray-200 rounded-full focus:border-brand-green focus:outline-none" />
               <p className="text-xs text-gray-500">By clicking the button, you agree to the processing of <span className="text-brand-green">personal data</span></p>
               <button type="submit" className="w-full bg-brand-green text-white font-bold py-3 rounded-full">Poluchit skidku</button>

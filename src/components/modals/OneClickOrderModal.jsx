@@ -47,7 +47,7 @@ const OneClickOrderModal = ({ onClose }) => {
             </div>
             <form onSubmit={submit} className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
-                <input required placeholder="Your name" className="px-4 py-3 border-2 border-gray-200 rounded-full focus:border-brand-green focus:outline-none" />
+                <input required placeholder="Enter Your name" className="px-4 py-3 border-2 border-gray-200 rounded-full focus:border-brand-green focus:outline-none" />
                 <input required type="tel" placeholder="Phone" className="px-4 py-3 border-2 border-gray-200 rounded-full focus:border-brand-green focus:outline-none" />
               </div>
               <button type="submit" className="w-full bg-brand-green text-white font-bold py-3 rounded-full">Sdelat Zakaz</button>
