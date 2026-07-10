@@ -13,7 +13,7 @@ const MedicinesMenu = ({ onClose }) => {
         <div className="flex items-center gap-2 mb-3">
           <div className="bg-white px-4 py-1.5 rounded-t-xl flex items-center gap-1.5 border-t-2 border-x-2 border-primary-500">
             <span className="text-primary-500">💊</span>
-            <span className="font-bold text-xs">MEDICINES</span>
+            <span className="font-bold text-xs">Medicines </span>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

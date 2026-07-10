@@ -6,9 +6,9 @@ import mapImage from '../assets/images/map/image.png'
 import PaymentModal from '../components/modals/PaymentModal'
 
 const PAYMENT_METHODS = [
-  { id: 'cod', label: 'Nalichnymi with poluchenii', icon: Wallet },
-  { id: 'card', label: 'Bankovskoy kartoy online', icon: CreditCard },
-  { id: 'sbp', label: 'Payment cherez Fast Payment System', icon: Smartphone },
+  { id: 'cod', label: 'Cash on Delivery', icon: Wallet },
+  { id: 'card', label: 'Pay with Bank Card', icon: CreditCard },
+  { id: 'sbp', label: 'Pay via the Fast Payment System', icon: Smartphone },
 ]
 
 const Checkout = () => {
@@ -33,14 +33,14 @@ const Checkout = () => {
 
   const validate = () => {
     const errs = {}
-    if (!form.name.trim()) errs.name = 'Pozhaluysta, ukazhite vashe name'
+    if (!form.name.trim()) errs.name = 'Please enter your name'
 
-    if (!form.phone.trim()) errs.phone = 'Pozhaluysta, ukazhite number phone'
+    if (!form.phone.trim()) errs.phone = 'Please enter your phone number'
     else if (form.phone.replace(/\D/g, '').length < 10) errs.phone = 'Enter korrektnyy number phone'
 
-    if (orderType === 'delivery' && !form.address.trim()) errs.address = 'Pozhaluysta, ukazhite address delivery'
+    if (orderType === 'delivery' && !form.address.trim()) errs.address = 'Please enter your delivery address'
 
-    if (!paymentMethod) errs.paymentMethod = 'Pozhaluysta, vyberite sposob oplaty'
+    if (!paymentMethod) errs.paymentMethod = 'Please select a payment method'
 
     return errs
   }
@@ -76,7 +76,7 @@ const Checkout = () => {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <h1 className="text-2xl font-bold mb-4">Oformlenie order</h1>
+      <h1 className="text-2xl font-bold mb-4">Place order</h1>
       <div className="grid lg:grid-cols-3 gap-4">
         <div className="lg:col-span-2 space-y-4">
 
@@ -112,7 +112,7 @@ const Checkout = () => {
             </div>
             <label className="flex items-center gap-2 mt-3 text-xs">
               <input type="checkbox" checked={form.agree} onChange={(e) => updateField('agree', e.target.checked)} className="accent-primary-500" />
-              <span>Send Sms coated izmenenii statusa order</span>
+              <span>Send SMS notifications about order status changes</span>
             </label>
           </div>
 
@@ -132,8 +132,8 @@ const Checkout = () => {
           <div ref={addressRef} className="bg-white rounded-2xl p-5 shadow-sm">
             <h3 className="font-bold text-sm mb-3">Delivery</h3>
             <div className="grid grid-cols-2 gap-2 mb-3">
-              <button onClick={() => setOrderType('delivery')} className={`py-2 rounded-full text-sm font-bold ${orderType === 'delivery' ? 'bg-primary-500 text-white' : 'bg-gray-100'}`}>Dostavka</button>
-              <button onClick={() => setOrderType('pickup')} className={`py-2 rounded-full text-sm font-bold ${orderType === 'pickup' ? 'bg-primary-500 text-white' : 'bg-gray-100'}`}>Samovyvoz</button>
+              <button onClick={() => setOrderType('delivery')} className={`py-2 rounded-full text-sm font-bold ${orderType === 'delivery' ? 'bg-primary-500 text-white' : 'bg-gray-100'}`}>Delivery</button>
+              <button onClick={() => setOrderType('pickup')} className={`py-2 rounded-full text-sm font-bold ${orderType === 'pickup' ? 'bg-primary-500 text-white' : 'bg-gray-100'}`}>Pick-Up</button>
             </div>
             {orderType === 'delivery' && (
               <>
@@ -145,11 +145,11 @@ const Checkout = () => {
                 />
                 {errors.address && <p className="flex items-center gap-1 text-red-500 text-xs mb-2 ml-1"><AlertCircle size={12} />{errors.address}</p>}
                 <div className="flex flex-wrap gap-2 mt-2">
-                  {['building', 'Ofis', 'Poliklinika', 'Other'].map(t => (
+                  {['Building', 'Office', 'Polyclinic', 'Other'].map(t => (
                     <button key={t} className="px-3 py-1.5 border-2 border-gray-200 rounded-full text-xs hover:border-primary-500">{t}</button>
                   ))}
                 </div>
-                <a href="#" className="text-primary-500 text-xs mt-2 inline-block">Zapomnit moy address</a>
+                <a href="#" className="text-primary-500 text-xs mt-2 inline-block">Remember My Address</a>
               </>
             )}
           </div>

@@ -90,6 +90,11 @@ function AppLayout() {
   const location = useLocation()
 
   useEffect(() => {
+    // Reset scroll position on every route change so the new page opens
+    // at the top (header/content) instead of staying at the previous
+    // scroll position (which could leave only the footer visible).
+    window.scrollTo(0, 0)
+
     repairVisibleText()
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {

@@ -55,22 +55,42 @@ const AuthModal = ({ onClose, mode: initialMode = 'login' }) => {
       if (user.password !== form.password) { setError('Invalid password'); return }
       setUser(user)
     } else {
-      // Register with email
-      if (!validateEmail(form.email)) {
+      // Register with email and/or phone number — at least one is required.
+      const hasEmail = form.email.trim() !== ''
+      const hasPhone = form.phone.trim() !== ''
+
+      if (!hasEmail && !hasPhone) {
+        setFieldError('Please enter either an email address or a phone number.')
+        return
+      }
+      if (hasEmail && !validateEmail(form.email)) {
         setFieldError('Please enter a valid email address')
+        return
+      }
+      if (hasPhone && !validatePhone(form.phone)) {
+        setFieldError('Please enter a valid phone number (10-11 digits)')
         return
       }
       if (!form.password || form.password.length < 6) {
         setFieldError('Password must be at least 6 characters')
         return
       }
-      const emailExists = users.some(u => u.email?.toLowerCase() === form.email.trim().toLowerCase())
-      if (emailExists) { setError('This email is already registered'); return }
+
+      const normalizedPhone = hasPhone ? normalizePhone(form.phone) : ''
+
+      if (hasEmail) {
+        const emailExists = users.some(u => u.email?.toLowerCase() === form.email.trim().toLowerCase())
+        if (emailExists) { setError('This email is already registered'); return }
+      }
+      if (hasPhone) {
+        const phoneExists = users.some(u => u.phone && normalizePhone(u.phone) === normalizedPhone)
+        if (phoneExists) { setError('This phone number is already registered'); return }
+      }
 
       const newUser = {
-        name: form.email.split('@')[0],
+        name: hasEmail ? form.email.split('@')[0] : form.phone.trim(),
         email: form.email.trim(),
-        phone: '',
+        phone: normalizedPhone,
         password: form.password,
       }
       setUser(newUser)
@@ -91,7 +111,7 @@ const AuthModal = ({ onClose, mode: initialMode = 'login' }) => {
         <p className="text-xs text-gray-600 mb-4">
           {mode === 'login'
             ? 'Sign in with the phone number you registered with.'
-            : 'Create an account using your email address.'}
+            : 'Create an account using your email address or phone number.'}
         </p>
 
         {fieldError && <div className="mb-3 p-2.5 bg-amber-50 text-amber-700 text-xs rounded-lg">{fieldError}</div>}
@@ -128,11 +148,20 @@ const AuthModal = ({ onClose, mode: initialMode = 'login' }) => {
               <div className="relative">
                 <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
                 <input
-                  required
                   type="email"
                   placeholder="Your email"
                   value={form.email}
                   onChange={e => setForm({ ...form, email: e.target.value })}
+                  className="w-full pl-10 pr-3 py-2.5 border-2 border-gray-200 rounded-full focus:border-primary-500 focus:outline-none text-sm"
+                />
+              </div>
+              <div className="relative">
+                <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                <input
+                  type="tel"
+                  placeholder="Your phone number"
+                  value={form.phone}
+                  onChange={e => setForm({ ...form, phone: e.target.value })}
                   className="w-full pl-10 pr-3 py-2.5 border-2 border-gray-200 rounded-full focus:border-primary-500 focus:outline-none text-sm"
                 />
               </div>

@@ -3,7 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import { products } from '../data/products'
 import { medicineCategories, moreMedicineCategories, diseases, subNavLinks } from '../data/categories'
-import { ChevronRight, ChevronDown, ArrowDownWideNarrow, ArrowUpWideNarrow, Sparkles, Flame } from 'lucide-react'
+import { ChevronRight, ChevronDown, ArrowDownWideNarrow, ArrowUpWideNarrow, Sparkles, Flame, PackageSearch } from 'lucide-react'
 
 const sortOptions = [
   { key: 'price-asc', label: 'Lowest price first', icon: ArrowDownWideNarrow },
@@ -20,16 +20,25 @@ const Catalog = () => {
   const [activeCategory, setActiveCategory] = useState(searchParams.get('category') || 'anesthesia')
   const [maxPrice, setMaxPrice] = useState(50000)
   const [inStockOnly, setInStockOnly] = useState(false)
+  // Product name/brand search coming from the Header search field, e.g.
+  // /catalog?search=niv — matches "Nivea" etc. case-insensitively.
+  const searchQuery = (searchParams.get('search') || '').trim().toLowerCase()
 
   const filtered = useMemo(() => {
     let list = [...products]
+    if (searchQuery) {
+      list = list.filter(p =>
+        p.name.toLowerCase().includes(searchQuery) ||
+        (p.brand && p.brand.toLowerCase().includes(searchQuery))
+      )
+    }
     list = list.filter(p => p.price <= maxPrice)
     if (inStockOnly) list = list.filter(p => p.inStock)
     if (sortBy === 'price-asc') list.sort((a, b) => a.price - b.price)
     if (sortBy === 'price-desc') list.sort((a, b) => b.price - a.price)
     if (sortBy === 'hits') list = list.filter(p => p.isHit).concat(list.filter(p => !p.isHit))
     return list
-  }, [sortBy, maxPrice, inStockOnly])
+  }, [sortBy, maxPrice, inStockOnly, searchQuery])
 
   return (
     <div className="bg-gray-100">
@@ -38,10 +47,12 @@ const Catalog = () => {
         <div className="text-xs text-gray-500 mb-3 flex items-center gap-1">
           <Link to="/" className="hover:text-primary-500">Home</Link>
           <ChevronRight size={12} />
-          <span className="text-gray-700">Medicines</span>
+          <span className="text-gray-700">{searchQuery ? 'Search results' : 'Medicines'}</span>
         </div>
 
-        <h1 className="text-2xl font-bold mb-4 text-gray-900">Medicines</h1>
+        <h1 className="text-2xl font-bold mb-4 text-gray-900">
+          {searchQuery ? `Search results for "${searchParams.get('search')}"` : 'Medicines'}
+        </h1>
 
         <div className="flex gap-4">
           {/* Sidebar */}
@@ -157,11 +168,18 @@ const Catalog = () => {
             </div>
 
             {/* Product grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3">
-              {filtered.map((p) => (
-                <ProductCard key={p.id} product={p} />
-              ))}
-            </div>
+            {filtered.length > 0 ? (
+              <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3">
+                {filtered.map((p) => (
+                  <ProductCard key={p.id} product={p} />
+                ))}
+              </div>
+            ) : (
+              <div className="bg-white rounded-2xl p-10 shadow-sm flex flex-col items-center text-center gap-3">
+                <PackageSearch size={40} className="text-gray-300" />
+                <p className="text-gray-500 text-sm">No products found.</p>
+              </div>
+            )}
 
             {/* Pagination */}
             <div className="flex items-center justify-center gap-1.5 mt-8">

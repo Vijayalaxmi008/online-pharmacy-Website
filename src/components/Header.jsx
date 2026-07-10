@@ -21,8 +21,24 @@ const Header = () => {
   const [authOpen, setAuthOpen] = useState(false)
   const [callbackOpen, setCallbackOpen] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [searchOpen, setSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
 
   const handleLogout = () => { logout(); setMobileMenuOpen(false); navigate('/') }
+
+  // Shared by the mobile search bar and the desktop search field: sends the
+  // user to the Catalog page with a `search` query param. Catalog performs
+  // the actual case-insensitive, partial-match filtering across all
+  // products and shows a "No products found." message when there are no
+  // matches.
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    const query = searchQuery.trim()
+    if (!query) return
+    navigate(`/catalog?search=${encodeURIComponent(query)}`)
+    setSearchOpen(false)
+    setMobileMenuOpen(false)
+  }
 
   return (
     <>
@@ -44,10 +60,18 @@ const Header = () => {
           </Link>
         </div>
         <div className="px-3 py-2 border-b">
-          <div className="relative">
-            <input type="text" placeholder="Search medicines..." className="w-full pl-3 pr-9 py-2 bg-gray-100 rounded-full focus:outline-none text-sm" />
-            <Search size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400" />
-          </div>
+          <form onSubmit={handleSearchSubmit} className="relative">
+            <input
+              type="text"
+              placeholder="Search medicines..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-3 pr-9 py-2 bg-gray-100 rounded-full focus:outline-none text-sm"
+            />
+            <button type="submit" aria-label="Search" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+              <Search size={16} />
+            </button>
+          </form>
         </div>
         <div className="flex items-center justify-around px-1 py-2 border-b text-[11px]">
           <button onClick={() => setCityOpen(true)} className="flex flex-col items-center gap-0.5 px-2 py-1">
@@ -178,9 +202,26 @@ const Header = () => {
   </a>
 
   <div className="flex items-center gap-2 ml-auto">
-    <button className="w-9 h-9 rounded-full border-2 border-primary-500 flex items-center justify-center hover:bg-primary-500 hover:text-white group shrink-0">
-      <Search size={16} className="text-primary-500 group-hover:text-white" />
-    </button>
+    {searchOpen ? (
+      <form onSubmit={handleSearchSubmit} className="flex items-center gap-1.5">
+        <input
+          autoFocus
+          type="text"
+          placeholder="Search products..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          onBlur={() => { if (!searchQuery.trim()) setSearchOpen(false) }}
+          className="w-36 lg:w-52 pl-3 pr-3 py-2 border-2 border-primary-500 rounded-full focus:outline-none text-sm"
+        />
+        <button type="submit" aria-label="Search" className="w-9 h-9 rounded-full border-2 border-primary-500 flex items-center justify-center hover:bg-primary-500 hover:text-white group shrink-0">
+          <Search size={16} className="text-primary-500 group-hover:text-white" />
+        </button>
+      </form>
+    ) : (
+      <button onClick={() => setSearchOpen(true)} aria-label="Search" className="w-9 h-9 rounded-full border-2 border-primary-500 flex items-center justify-center hover:bg-primary-500 hover:text-white group shrink-0">
+        <Search size={16} className="text-primary-500 group-hover:text-white" />
+      </button>
+    )}
     <button onClick={() => setCallbackOpen(true)} className="bg-gradient-to-r from-primary-400 to-primary-600 text-white font-bold px-3 lg:px-5 py-2 rounded-full hover:opacity-90 text-xs lg:text-sm whitespace-nowrap">
       <span className="hidden lg:inline">REQUEST A CALL</span>
       <span className="lg:hidden">CALL</span>
@@ -202,9 +243,9 @@ const Header = () => {
         </div>
 
         {/* Main nav */}
-        <nav className="bg-gradient-to-r from-navy-500 to-primary-500 relative overflow-x-hidden">
+        <nav className="bg-gradient-to-r from-navy-500 to-primary-500 relative">
           <div className="container mx-auto px-4">
-            <ul className="flex items-stretch text-white font-bold">
+            <ul className="flex items-center text-white font-bold w-full">
               {mainNavCategories.map(cat => {
                 const Icon = cat.icon
                 return (
@@ -213,11 +254,10 @@ const Header = () => {
                     onMouseLeave={() => cat.slug === 'medicines' && setMedicinesOpen(false)}>
                     <Link
                       to={cat.path || `/catalog?category=${cat.slug}`}
-                      className="flex items-center justify-center gap-1 sm:gap-1.5 lg:gap-2 px-1.5 sm:px-2 lg:px-3 xl:px-4 2xl:px-5 py-2.5 lg:py-3 hover:bg-black/10 min-w-0"
-                      title={cat.name}
+                      className="flex items-center justify-center gap-1 px-1.5 md:px-2 lg:px-3 xl:px-4 py-3 hover:bg-black/10 min-w-0"
                     >
-                      {Icon && <Icon className="shrink-0 w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4" />}
-                      <span className="truncate min-w-0 text-[10px] sm:text-[11px] lg:text-xs xl:text-sm">{cat.name}</span>
+                      {Icon && <Icon size={14} className="shrink-0" />}
+                      <span className="truncate text-[10px] md:text-[11px] lg:text-xs xl:text-sm">{cat.name}</span>
                     </Link>
                   </li>
                 )
