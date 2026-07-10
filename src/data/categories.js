@@ -18,15 +18,15 @@ export const categories = [
 ]
 
 export const mainNavCategories = [
-  { name: 'MEDICINES', slug: 'medicines', icon: Pill },
-  { name: 'VITAMINS AND SUPPLEMENTS', slug: 'vitamins', icon: FlaskConical },
-  { name: 'BEAUTY', slug: 'cosmetics', icon: Sparkles },
-  { name: 'HYGIENE', slug: 'hygiene', icon: Users },
-  { name: 'LENSES', slug: 'lenses', icon: Eye },
-  { name: 'MOTHER AND BABY', slug: 'baby', icon: Baby },
-  { name: 'MEDICAL SUPPLIES', slug: 'medical', icon: Stethoscope },
-  { name: 'PET SUPPLIES', slug: 'pets', icon: PawPrint },
-  { name: 'MEDICAL EQUIPMENT', slug: 'equipment', icon: Activity },
+  { name: 'MEDICINES', slug: 'medicines', icon: Pill, path: '/catalog?category=medicines' },
+  { name: 'VITAMINS AND SUPPLEMENTS', slug: 'vitamins', icon: FlaskConical, path: '/catalog?category=vitamins' },
+  { name: 'BEAUTY', slug: 'cosmetics', icon: Sparkles, path: '/beauty' },
+  { name: 'HYGIENE', slug: 'hygiene', icon: Users, path: '/hygiene' },
+  { name: 'LENSES', slug: 'lenses', icon: Eye, path: '/lenses' },
+  { name: 'MOTHER AND BABY', slug: 'baby', icon: Baby, path: '/mother-and-baby' },
+  { name: 'MEDICAL SUPPLIES', slug: 'medical', icon: Stethoscope, path: '/medical-supplies' },
+  { name: 'PET SUPPLIES', slug: 'pets', icon: PawPrint, path: '/pet-supplies' },
+  { name: 'MEDICAL EQUIPMENT', slug: 'equipment', icon: Activity, path: '/catalog?category=equipment' },
 ]
 
 export const subNavLinks = [

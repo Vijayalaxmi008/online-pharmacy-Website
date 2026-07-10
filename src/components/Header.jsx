@@ -89,7 +89,7 @@ const Header = () => {
               <ul className="space-y-1 mb-4">
                 {mainNavCategories.map(cat => (
                   <li key={cat.slug}>
-                    <Link to={`/catalog?category=${cat.slug}`} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 hover:bg-gray-50 rounded-lg">
+                    <Link to={cat.path || `/catalog?category=${cat.slug}`} onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-3 px-3 py-3 hover:bg-gray-50 rounded-lg">
                       <span className="font-medium text-sm">{cat.name}</span>
                     </Link>
                   </li>
@@ -202,18 +202,22 @@ const Header = () => {
         </div>
 
         {/* Main nav */}
-        <nav className="bg-gradient-to-r from-navy-500 to-primary-500 relative">
+        <nav className="bg-gradient-to-r from-navy-500 to-primary-500 relative overflow-x-hidden">
           <div className="container mx-auto px-4">
-            <ul className="flex items-center text-white text-sm font-bold">
+            <ul className="flex items-stretch text-white font-bold">
               {mainNavCategories.map(cat => {
                 const Icon = cat.icon
                 return (
-                  <li key={cat.slug} className="relative"
+                  <li key={cat.slug} className="relative flex-1 min-w-0"
                     onMouseEnter={() => cat.slug === 'medicines' && setMedicinesOpen(true)}
                     onMouseLeave={() => cat.slug === 'medicines' && setMedicinesOpen(false)}>
-                    <Link to={`/catalog?category=${cat.slug}`} className="flex items-center justify-center gap-2 px-5 py-3 hover:bg-black/10 whitespace-nowrap">
-                      {Icon && <Icon size={16} />}
-                      <span>{cat.name}</span>
+                    <Link
+                      to={cat.path || `/catalog?category=${cat.slug}`}
+                      className="flex items-center justify-center gap-1 sm:gap-1.5 lg:gap-2 px-1.5 sm:px-2 lg:px-3 xl:px-4 2xl:px-5 py-2.5 lg:py-3 hover:bg-black/10 min-w-0"
+                      title={cat.name}
+                    >
+                      {Icon && <Icon className="shrink-0 w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4" />}
+                      <span className="truncate min-w-0 text-[10px] sm:text-[11px] lg:text-xs xl:text-sm">{cat.name}</span>
                     </Link>
                   </li>
                 )
@@ -232,7 +236,7 @@ const Header = () => {
               const Icon = cat.icon
               return (
                 <li key={cat.slug} className="shrink-0">
-                  <Link to={`/catalog?category=${cat.slug}`} className="flex items-center gap-1 px-3 py-1.5">
+                  <Link to={cat.path || `/catalog?category=${cat.slug}`} className="flex items-center gap-1 px-3 py-1.5">
                     {Icon && <Icon size={13} />}
                     {cat.name}
                   </Link>

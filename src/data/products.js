@@ -7,6 +7,11 @@ import heptral from '../assets/images/products/heptral.png'
 import nise from '../assets/images/products/nise.png'
 import arbidol from '../assets/images/products/arbidol.png'
 import desmoxan from '../assets/images/products/desmoxan.png'
+import creon from '../assets/images/products/creon.png'
+import normoven from '../assets/images/products/Normoven.png'
+ 
+import oralBImg from '../assets/images/banners/Oral-B.png'
+import neviaCareImg from '../assets/images/banners/neviaCare.png'
 
 export const products = [
   {
@@ -58,6 +63,29 @@ export const products = [
     id: 8, name: 'Desmoxan smoking cessation tablets, 100 pcs.',
     brand: 'Desmohan', inStock: true, price: 444, image: desmoxan,
     isHit: true, category: 'medicines', code: 890456, rating: 5,
+  },
+
+  {
+    id: 9,
+    name: 'Creon 10000, enteric-coated capsules, 10,000 units, 20 pcs.',
+    brand: 'Abbott', inStock: true, price: 9999999, oldPrice: 10000000,
+    image: creon, category: 'medical', code: 25563, rating: 4,
+    description: 'Enzyme replacement medicine (enzyme-containing preparations category) indicated for exocrine pancreatic insufficiency and digestive discomfort caused by dietary irregularities. Active ingredient: Pancreatin. Manufacturer: Abbott, USA. Long shelf life. Sold by prescription only; prescription-required items are not shipped by mail.',
+  },
+  {
+    id: 10, name: 'Normoven',
+    brand: 'Normoven', inStock: true, price: 1340, image: normoven,
+    category: 'medical', code: 250003, rating: 5,
+  },
+  {
+    id: 11, name: 'NeviaCare',
+    brand: 'NeviaCare', inStock: true, price: 480, image: neviaCareImg,
+    category: 'baby', code: 240002, rating: 5,
+  },
+  {
+    id: 12, name: 'Oral-B',
+    brand: 'Oral-B', inStock: true, price: 1290, image: oralBImg,
+    isHit: true, isProductOfDay: true, category: 'hygiene', code: 220001, rating: 5,
   },
 ]
 

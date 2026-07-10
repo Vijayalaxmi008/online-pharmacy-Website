@@ -3,10 +3,22 @@ import { Heart, Star, ShoppingCart } from 'lucide-react'
 import { useApp } from '../context/AppContext'
 import { useCart } from '../context/CartContext'
 
-const ProductCard = ({ product, showNumber = false, number = 0 }) => {
+const ProductCard = ({ product, showNumber = false, number = 0, onSelect = null }) => {
   const { favorites, toggleFavorite } = useApp()
   const { addToCart } = useCart()
   const isFav = favorites.includes(product.id)
+
+  // When an onSelect handler is passed in (used by category pages that show
+  // product details inline on the same page), clicking the product opens it
+  // in-page instead of navigating to the standalone /product/:id route.
+  // Every existing usage of ProductCard omits onSelect, so behavior there is
+  // unchanged.
+  const handleOpen = (e) => {
+    if (onSelect) {
+      e.preventDefault()
+      onSelect(product)
+    }
+  }
 
   return (
     <div className="bg-white rounded-2xl shadow-sm hover:shadow-lg transition overflow-hidden flex flex-col relative">
@@ -20,7 +32,7 @@ const ProductCard = ({ product, showNumber = false, number = 0 }) => {
         <button onClick={() => toggleFavorite(product.id)} className="absolute top-3 right-3 w-7 h-7 rounded-full bg-white shadow flex items-center justify-center hover:scale-110 z-10">
           <Heart size={14} className={isFav ? 'fill-primary-500 text-primary-500' : 'text-gray-400'} />
         </button>
-        <Link to={`/product/${product.id}`}>
+        <Link to={`/product/${product.id}`} onClick={handleOpen}>
           <img src={product.image} alt={product.name} className="w-full aspect-square object-contain rounded-lg bg-white" />
         </Link>
       </div>
@@ -35,7 +47,7 @@ const ProductCard = ({ product, showNumber = false, number = 0 }) => {
             ))}
           </div>
         </div>
-        <Link to={`/product/${product.id}`} className="text-xs font-medium mb-2 line-clamp-2 hover:text-primary-500 min-h-[32px]">
+        <Link to={`/product/${product.id}`} onClick={handleOpen} className="text-xs font-medium mb-2 line-clamp-2 hover:text-primary-500 min-h-[32px]">
           {product.name}
         </Link>
         <ul className="text-[10px] text-gray-500 space-y-0.5 mb-2">

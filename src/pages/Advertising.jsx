@@ -15,7 +15,7 @@ import femibionImg from '../assets/images/products/femibion.png'
 // ARTICLE PAGE — replica of Article_page.png reference
 
 const article = {
-  title: '',
+  title: 'Remaing a Women. How does hormal balance help you stay young and beautiful?',
   image: ladyModelImg,
   readTime: '10 minutes to read',
   category: 'Category name',

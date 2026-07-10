@@ -7,6 +7,12 @@ import Footer from './components/Footer'
 import QuestionsCTA from './components/QuestionsCTA'
 import Home from './pages/Home'
 import Catalog from './pages/Catalog'
+import Beauty from './pages/Beauty'
+import Hygiene from './pages/Hygiene'
+import Lenses from './pages/Lenses'
+import MotherAndBaby from './pages/MotherAndBaby'
+import MedicalSupplies from './pages/MedicalSupplies'
+import PetSupplies from './pages/PetSupplies'
 import ProductDetail from './pages/ProductDetail'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
@@ -115,6 +121,12 @@ function AppLayout() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
+          <Route path="/beauty" element={<Beauty />} />
+          <Route path="/hygiene" element={<Hygiene />} />
+          <Route path="/lenses" element={<Lenses />} />
+          <Route path="/mother-and-baby" element={<MotherAndBaby />} />
+          <Route path="/medical-supplies" element={<MedicalSupplies />} />
+          <Route path="/pet-supplies" element={<PetSupplies />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
@@ -135,20 +147,20 @@ function AppLayout() {
           <Route path="/license" element={<License />} />
           <Route path="/alphabet" element={<AlphabetSearch />} />
           <Route path="/privacy" element={<Privacy />} />
-<Route path="/terms" element={<StaticText title="Terms of Use" />} />
-<Route
-  path="/franchise"
-  element={
-    <StaticText
-      title="Franchise"
-      paragraphs={[
-        'We predlagaem partneram gotovuyu model sotsialnoy apteki: uznavaemyy brend, otlazhennye biznes-protsessy, obuchenie personala and podderzhku to vsekh etapakh zapuska.',
-        'Franchayzingovyy paket vklyuchaet pomoshch in vybore pomeshcheniya, postavku assortimenta napryamuyu from proizvoditeley and distribyutorov, a also marketingovuyu podderzhku.',
-        'Chtoby poluchit prezentatsiyu franshizy and usloviya sotrudnichestva, napishite to info@restoll.ru or pozvonite on phone 8-800-777-22-33.',
-      ]}
-    />
-  }
-/>
+          <Route path="/terms" element={<StaticText title="Terms of Use" />} />
+          <Route
+            path="/franchise"
+            element={
+              <StaticText
+                title="Franchise"
+                paragraphs={[
+                  'We predlagaem partneram gotovuyu model sotsialnoy apteki: uznavaemyy brend, otlazhennye biznes-protsessy, obuchenie personala and podderzhku to vsekh etapakh zapuska.',
+                  'Franchayzingovyy paket vklyuchaet pomoshch in vybore pomeshcheniya, postavku assortimenta napryamuyu from proizvoditeley and distribyutorov, a also marketingovuyu podderzhku.',
+                  'Chtoby poluchit prezentatsiyu franshizy and usloviya sotrudnichestva, napishite to info@restoll.ru or pozvonite on phone 8-800-777-22-33.',
+                ]}
+              />
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
