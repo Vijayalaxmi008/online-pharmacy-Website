@@ -140,33 +140,7 @@ const Header = () => {
 
       {/* DESKTOP HEADER */}
       <header className="hidden md:block bg-white shadow-sm relative z-40">
-        <div className="container mx-auto px-4 py-2 flex items-center justify-between gap-3 text-sm bg-white">
-          <div className="flex items-center gap-4">
-            <button onClick={() => setCityOpen(true)} className="flex items-center gap-1 text-gray-700 hover:text-primary-500">
-              <MapPin size={14} className="text-primary-500" /><span>{city}</span><ChevronDown size={12} className="text-gray-400" />
-            </button>
-            <button onClick={() => setServiceOpen(true)} className="flex items-center gap-1 text-gray-700 hover:text-primary-500">
-              <Menu size={14} className="text-primary-500" /><span>Service Pages</span>
-            </button>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link to="/favorites" className="flex items-center gap-1 text-gray-700 hover:text-primary-500">
-              <span>Favorites</span><Heart size={14} className="text-primary-500" />
-            </Link>
-            {user ? (
-              <div className="flex items-center gap-3">
-                <Link to="/account" className="flex items-center gap-1 text-gray-700 hover:text-primary-500">
-                  <span>Account</span><User size={14} className="text-primary-500" />
-                </Link>
-                <button onClick={handleLogout} className="text-red-500"><LogOut size={14} /></button>
-              </div>
-            ) : (
-              <button onClick={() => setAuthOpen(true)} className="flex items-center gap-1 text-gray-700 hover:text-primary-500">
-                <span>Account</span><User size={14} className="text-primary-500" />
-              </button>
-            )}
-          </div>
-        </div>
+        
 
         <div className="container mx-auto px-4 py-3 flex flex-wrap lg:flex-nowrap items-center gap-3 lg:gap-6 border-t border-b border-gray-200 bg-white">
   <Link to="/" className="flex items-center gap-2 shrink-0">
@@ -243,15 +217,15 @@ const Header = () => {
         </div>
 
         {/* Main nav */}
-        <nav className="bg-gradient-to-r from-navy-500 to-primary-500 relative">
+        <nav className="bg-[#173a56] relative">
           <div className="container mx-auto px-4">
             <ul className="flex items-center text-white font-bold w-full">
               {mainNavCategories.map(cat => {
                 const Icon = cat.icon
                 return (
-                  <li key={cat.slug} className="relative flex-1 min-w-0"
-                    onMouseEnter={() => cat.slug === 'medicines' && setMedicinesOpen(true)}
-                    onMouseLeave={() => cat.slug === 'medicines' && setMedicinesOpen(false)}>
+                  <li
+                  key={cat.slug}
+                  className="relative flex-1 min-w-0">
                     <Link
                       to={cat.path || `/catalog?category=${cat.slug}`}
                       className="flex items-center justify-center gap-1 px-1.5 md:px-2 lg:px-3 xl:px-4 py-3 hover:bg-black/10 min-w-0"

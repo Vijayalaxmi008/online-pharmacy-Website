@@ -5,6 +5,7 @@ import { CartProvider } from './context/CartContext'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import QuestionsCTA from './components/QuestionsCTA'
+import HealthBlogSection from './components/HealthBlogSection'
 import Home from './pages/Home'
 import Catalog from './pages/Catalog'
 import Beauty from './pages/Beauty'
@@ -32,6 +33,7 @@ import Payment from './pages/Payment'
 import License from './pages/License'
 import Privacy from './pages/Privacy'
 import AlphabetSearch from './pages/AlphabetSearch'
+import Vitamins from './pages/Vitamins'
 import StaticText from './pages/StaticText'
 import NotFound from './pages/NotFound'
 
@@ -151,6 +153,7 @@ function AppLayout() {
           <Route path="/payment" element={<Payment />} />
           <Route path="/license" element={<License />} />
           <Route path="/alphabet" element={<AlphabetSearch />} />
+          <Route path="/vitamins" element={<Vitamins />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<StaticText title="Terms of Use" />} />
           <Route
@@ -159,9 +162,9 @@ function AppLayout() {
               <StaticText
                 title="Franchise"
                 paragraphs={[
-                  'We predlagaem partneram gotovuyu model sotsialnoy apteki: uznavaemyy brend, otlazhennye biznes-protsessy, obuchenie personala and podderzhku to vsekh etapakh zapuska.',
-                  'Franchayzingovyy paket vklyuchaet pomoshch in vybore pomeshcheniya, postavku assortimenta napryamuyu from proizvoditeley and distribyutorov, a also marketingovuyu podderzhku.',
-                  'Chtoby poluchit prezentatsiyu franshizy and usloviya sotrudnichestva, napishite to info@restoll.ru or pozvonite on phone 8-800-777-22-33.',
+                  'We offer our partners a ready-made social pharmacy model: a recognizable brand, proven business processes, staff training, and support at every stage of launch.',
+                  'The franchise package includes help choosing a location, direct supply of products from manufacturers and distributors, and marketing support.',
+                  'To receive a franchise presentation and discuss the terms of cooperation, write to info@restoll.ru or call 8-800-777-22-33.',
                 ]}
               />
             }
@@ -169,6 +172,7 @@ function AppLayout() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <HealthBlogSection />
       <QuestionsCTA />
       <Footer />
     </div>

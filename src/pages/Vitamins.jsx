@@ -1,35 +1,26 @@
-﻿import { Link } from 'react-router-dom'
-import { Pill, FlaskConical, Sparkles, Users, Stethoscope, PawPrint, Baby, Eye, Activity } from 'lucide-react'
-import { alphabetCategoryGroups } from '../data/categories'
+import { Link } from 'react-router-dom'
+import { alphabetCategoryGroups, mainNavCategories } from '../data/categories'
 
 const CYRILLIC_LETTERS = 'А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я'.split(' ')
 const EN_LETTERS = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z'.split(' ')
 const DIGITS = '0 1 2 3 4 5 6 7 8 9'.split(' ')
 
-// Matched by keyword against slug + title instead
-// of an exact slug string, so it doesn't break if the data uses slightly
-// different slug spellings 
-const CATEGORY_STYLES = [
-  { keywords: ['medicine'],                 icon: Pill,        iconClass: 'bg-blue-50 text-blue-500' },
-  { keywords: ['vitamin'],                  icon: FlaskConical,iconClass: 'bg-orange-50 text-orange-500' },
-  { keywords: ['beauty', 'cosmetic'],       icon: Sparkles,    iconClass: 'bg-purple-50 text-purple-500' },
-  { keywords: ['hygiene'],                  icon: Users,       iconClass: 'bg-teal-50 text-teal-500' },
-  { keywords: ['medicalsupp'],              icon: Stethoscope, iconClass: 'bg-red-50 text-red-500' },
-  { keywords: ['pet'],                      icon: PawPrint,    iconClass: 'bg-amber-50 text-amber-500' },
-  { keywords: ['mother', 'child', 'baby'],  icon: Baby,        iconClass: 'bg-pink-50 text-pink-500' },
-  { keywords: ['lens'],                     icon: Eye,         iconClass: 'bg-sky-50 text-sky-500' },
-  { keywords: ['equipment'],                icon: Activity,    iconClass: 'bg-emerald-50 text-emerald-500' },
-]
+const iconForSlug = (slug) => mainNavCategories.find(c => c.slug === slug)?.icon
 
-const normalize = (s = '') => s.toLowerCase().replace(/[^a-z]/g, '')
-
-const getGroupStyle = (group) => {
-  const haystack = `${normalize(group.slug)} ${normalize(group.title)}`
-  const match = CATEGORY_STYLES.find(s => s.keywords.some(k => haystack.includes(k)))
-  return match || { icon: null, iconClass: 'bg-primary-100 text-primary-500' }
+const COLOR_FOR_SLUG = {
+  medicines: 'bg-primary-100 text-primary-500',
+  vitamins: 'bg-orange-100 text-orange-500',
+  cosmetics: 'bg-purple-100 text-purple-500',
+  hygiene: 'bg-teal-100 text-teal-600',
+  medical: 'bg-red-100 text-red-500',
+  pets: 'bg-amber-100 text-amber-600',
+  baby: 'bg-pink-100 text-pink-500',
+  lenses: 'bg-blue-100 text-blue-500',
+  equipment: 'bg-primary-100 text-primary-600',
 }
+const colorForSlug = (slug) => COLOR_FOR_SLUG[slug] || 'bg-primary-100 text-primary-500'
 
-const AlphabetSearch = () => {
+const Vitamins = () => {
   return (
     <div className="container mx-auto px-4 py-6">
       <p className="text-xs text-gray-500 mb-2 flex items-center gap-1">
@@ -79,36 +70,38 @@ const AlphabetSearch = () => {
         <span className="hidden md:block absolute right-6 top-4 text-6xl font-black text-gray-100 select-none pointer-events-none">A-Z</span>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
         {alphabetCategoryGroups.map(group => {
-          const style = getGroupStyle(group)
-          const Icon = style.icon
+          const Icon = iconForSlug(group.slug)
           return (
-            <div key={group.slug} className="bg-white rounded-2xl shadow-sm p-5">
+            <div key={group.slug} className="bg-white rounded-xl border border-gray-100 shadow-sm p-5 hover:shadow-md transition">
               <div className="flex items-center gap-2 mb-3">
-                <span className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${style.iconClass}`}>
+                <span className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${colorForSlug(group.slug)}`}>
                   {Icon ? <Icon size={16} /> : '#'}
                 </span>
                 <h2 className="font-bold">{group.title}</h2>
               </div>
               <ul className="space-y-1.5 text-sm text-gray-600">
                 {group.items.map(item => (
-                  <li key={item}>
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-2 w-2 h-px bg-gray-300 shrink-0"></span>
                     <Link
-                      to={`/catalog?category=${group.slug}`}
-                      className="hover:text-primary-500 transition"
+                    to={`/catalog?category=${group.slug}`}
+                    className="text-gray-600 hover:text-primary-500 transition"
                     >
-                      {item}
+                        {item}
                     </Link>
-                  </li>
+                 </li>
                 ))}
               </ul>
-              <Link
-                to={`/catalog?category=${group.slug}`}
-                className="inline-block mt-3 text-sm font-bold text-primary-500 hover:underline"
-              >
-                All categories
-              </Link>
+              {group.truncated && (
+                <Link
+                  to={`/catalog?category=${group.slug}`}
+                  className="inline-block mt-3 text-sm font-bold text-primary-500 hover:underline"
+                >
+                  All categories
+                </Link>
+              )}
             </div>
           )
         })}
@@ -117,4 +110,4 @@ const AlphabetSearch = () => {
   )
 }
 
-export default AlphabetSearch
+export default Vitamins

@@ -2,11 +2,11 @@ import { Pill, FlaskConical, Sparkles, Users, Eye, Baby, Stethoscope, PawPrint, 
 
 // Import local category images
 import medicinesImg from '../assets/images/Categories/blackLady.png'
-import vitaminsImg from '../assets/images/Categories/tab1.png'
+import vitaminsImg from '../assets/images/products/Syrup.png'
 import cosmeticsImg from '../assets/images/Categories/ladyModel.png'
 import babyImg from '../assets/images/Categories/baby.png'
-import equipmentImg from '../assets/images/Categories/tablet.png'
-import hygieneImg from '../assets/images/Categories/serum.png'
+import equipmentImg from '../assets/images/products/tablet.png'
+import hygieneImg from '../assets/images/products/serum.png'
 
 export const categories = [
   { id: 1, name: 'Medicines', slug: 'medicines', image: medicinesImg },
@@ -19,7 +19,7 @@ export const categories = [
 
 export const mainNavCategories = [
   { name: 'MEDICINES', slug: 'medicines', icon: Pill, path: '/catalog?category=medicines' },
-  { name: 'VITAMINS AND SUPPLEMENTS', slug: 'vitamins', icon: FlaskConical, path: '/catalog?category=vitamins' },
+  { name: 'VITAMINS AND SUPPLEMENTS', slug: 'vitamins', icon: FlaskConical, path: '/vitamins' },
   { name: 'BEAUTY', slug: 'cosmetics', icon: Sparkles, path: '/beauty' },
   { name: 'HYGIENE', slug: 'hygiene', icon: Users, path: '/hygiene' },
   { name: 'LENSES', slug: 'lenses', icon: Eye, path: '/lenses' },
@@ -134,39 +134,70 @@ export const aboutParagraphs = [
 
 export const alphabetCategoryGroups = [
   {
-    title: 'Medicines', slug: 'medicines',
-    items: ['Obstetrics and gynecology', 'Allergy', 'Antibiotics', 'Pain and fever', 'Diabetes', 'Stomach, intestines and liver'],
+    slug: "medicines",
+    title: "Medicines",
+    truncated: true,
+    items: [
+      "Obstetrics and gynecology", "Allergy", "Anesthesia and intensive care",
+      "Antibiotics", "Blood diseases", "Pain and fever", "Hemorrhoids", "Eyes",
+      "Parasites and lice", "Homeopathy", "Diabetes", "Diagnostic products",
+      "Respiratory system", "Stomach, intestines and liver", "Teeth and mouth",
+      "Skin", "Urinary system", "Metabolic disorders", "Neurology and psychiatry",
+      "Disinfectants", "Oncology", "Poisoning", "Nutrition formulas",
+      "Antiviral products", "Antifungal products", "Other",
+    ],
   },
   {
-    title: 'Vitamins and Supplements', slug: 'vitamins',
-    items: ['Amino acids', 'Antioxidants', 'Multivitamins', 'Immune supplements', 'Prenatal vitamins', 'Cold season supplements'],
+    slug: "vitamins",
+    title: "Vitamins & Supplements",
+    truncated: true,
+    items: [
+      "Amino Acids", "L-Carnitine", "Antioxidants", "Vitamins for Vision",
+      "Multivitamins", "Supplements for Bad Habits", "Weight Management Supplements",
+      "Supplements for Diabetes", "Menopause Supplements", "Cold Season Supplements",
+      "Sedative Supplements", "Vitamins and Minerals", "Vitamins for Pregnancy and Breastfeeding",
+    ],
   },
   {
-    title: 'Beauty', slug: 'cosmetics',
-    items: ['Face care', 'Body care', 'Hair care', 'Sun protection', 'Pharmacy cosmetics', 'Korean cosmetics'],
+    slug: "cosmetics",
+    title: "Beauty",
+    truncated: true,
+    items: ["Face Care", "Body Care", "Hair Care", "Sun Protection", "Pharmacy Cosmetics"],
   },
   {
-    title: 'Hygiene', slug: 'hygiene',
-    items: ['Shower products', 'Oral care', 'Hygiene pads', 'Diapers', 'Antiseptics', 'Wet wipes'],
+    slug: "hygiene",
+    title: "Hygiene",
+    truncated: true,
+    items: ["Shower Products", "Oral Care", "Hygiene Pads", "Diapers", "Antiseptics"],
   },
   {
-    title: 'Mother and Baby', slug: 'baby',
-    items: ['Baby food', 'Diapers and changing', 'Baby care', 'Feeding products', 'Toys and development'],
+    slug: "medical",
+    title: "Medical Supplies",
+    truncated: true,
+    items: ["Bandages", "Compression Wear", "Orthopedic Products", "Medical Clothing", "Rehabilitation Products"],
   },
   {
-    title: 'Medical Supplies', slug: 'medical',
-    items: ['Bandages and plasters', 'Compression wear', 'Orthopedic products', 'Rehabilitation products', 'Medical clothing'],
+    slug: "pets",
+    title: "Pet Products",
+    truncated: true,
+    items: ["Pet Vitamins", "Antiparasitic Products", "Veterinary Food", "Pet Care", "Pet Hygiene"],
   },
   {
-    title: 'Lenses', slug: 'lenses',
-    items: ['Contact lenses', 'Lens solutions', 'Glasses and frames', 'Eye care products'],
+    slug: "baby",
+    title: "Mother & Child",
+    truncated: true,
+    items: ["Baby Food", "Diapers", "Baby Care", "Feeding Products", "Toys and Development"],
   },
   {
-    title: 'Pet Supplies', slug: 'pets',
-    items: ['Pet vitamins', 'Antiparasitic products', 'Therapeutic food', 'Pet care'],
+    slug: "lenses",
+    title: "Lenses",
+    truncated: true,
+    items: ["Contact Lenses", "Lens Solutions", "Lens Accessories", "Eye Drops", "Glasses Frames"],
   },
   {
-    title: 'Medical Equipment', slug: 'equipment',
-    items: ['Blood pressure monitors', 'Thermometers', 'Nebulizers', 'Glucose meters', 'Rehabilitation equipment'],
+    slug: "equipment",
+    title: "Medical Equipment",
+    truncated: true,
+    items: ["Blood Pressure Monitors", "Thermometers", "Nebulizers", "Glucometers", "Massagers"],
   },
 ]

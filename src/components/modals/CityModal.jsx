@@ -10,15 +10,15 @@ const CityModal = ({ onClose, onSelect }) => {
   return (
     <Modal onClose={onClose} maxWidth="max-w-2xl">
       <div className="p-5">
-        <h2 className="text-lg font-bold mb-3">Vybor goroda</h2>
+        <h2 className="text-lg font-bold mb-3">Choose your city</h2>
         <div className="relative mb-4">
           <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-          <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Naydite svoy gorod..."
+          <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Find your city..."
             className="w-full pl-9 pr-3 py-2.5 border-2 border-gray-200 rounded-xl focus:border-primary-500 focus:outline-none text-sm" />
         </div>
         <div className="grid grid-cols-3 md:grid-cols-4 gap-2 max-h-72 overflow-y-auto text-sm">
           {filtered.map(city => (
-            <button key={city} onClick={() => { onSelect(city + (city === 'Moscow' ? ' and oblast' : '')); onClose() }}
+            <button key={city} onClick={() => { onSelect(city + (city === 'Moscow' ? ' and Moscow Region' : '')); onClose() }}
               className={`text-left py-1 hover:text-primary-600 ${city === 'Moscow' ? 'text-primary-500 font-medium' : 'text-gray-700'}`}>
               {city}
             </button>
