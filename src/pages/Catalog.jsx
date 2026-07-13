@@ -238,16 +238,32 @@ const Catalog = () => {
             </section>
 
             {/* SEO text */}
-            <section className="mt-10 bg-white rounded-2xl p-6 shadow-sm text-xs text-gray-500 leading-relaxed grid md:grid-cols-2 gap-6">
-              <p className="text-[15px] leading-8 text-slate-500">
-                Buy medicines in Moscow and the surrounding region with home delivery through our online pharmacy. 
-                We offer a wide range of medicines from trusted manufacturers, affordable prices, and fast delivery throughout Russia.
-              </p>
-              <p>
-                We guarantee the authenticity of all our products—every medicine is certified for quality and compliance. 
-                Place your order online or collect it from the nearest pharmacy in our partner network.
-              </p>
-            </section>
+            <section className="mt-10 bg-white rounded-2xl p-6 shadow-sm">
+                <h2 className="text-lg font-bold text-gray-900 mb-4">SEO text</h2>
+                <div className="text-xs text-gray-500 leading-relaxed grid md:grid-cols-3 gap-6 mb-4">
+                  {seoParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+                </div>
+
+                <div className="flex gap-3 items-start bg-gray-50 border border-gray-100 rounded-xl p-4 mb-4">
+                  <Info size={18} className="text-primary-500 shrink-0 mt-0.5" />
+                  <p className="text-xs text-gray-600 leading-relaxed">{seoParagraphs[0]}</p>
+                </div>
+
+                {seoExpanded && (
+                  <div className="grid md:grid-cols-3 gap-8 text-xs text-gray-500 leading-relaxed mb-6">
+                    {[0, 1, 2].map((column) => (
+                      <div key={column} className="space-y-5">
+                        {seoParagraphs.map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <button onClick={() => setSeoExpanded((value) => !value)} className="inline-flex items-center gap-1 text-primary-500 text-xs font-bold hover:underline">
+                  {seoExpanded ? 'Hide' : 'Show full text'}
+                  {seoExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                </button>
+              </section>
           </div>
         </div>
       </div>

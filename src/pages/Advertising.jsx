@@ -198,7 +198,7 @@ const Advertising = () => {
 
             {/* Combo offer */}
             <section className="bg-white rounded-xl border border-gray-200 p-6 mb-10">
-              <h3 className="text-lg font-bold mb-6">Please note</h3>
+              <h3 className="text-lg font-bold mb-6">Pay Attention</h3>
               <div className="flex flex-wrap items-center justify-center gap-4 text-center">
                 {relatedProducts.map((p, i) => (
                   <Fragment key={p.name}>

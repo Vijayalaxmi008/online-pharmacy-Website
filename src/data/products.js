@@ -7,7 +7,7 @@ import heptral from '../assets/images/products/heptral.png'
 import nise from '../assets/images/products/nise.png'
 import arbidol from '../assets/images/products/arbidol.png'
 import desmoxan from '../assets/images/products/desmoxan.png'
-import creon from '../assets/images/products/creon.png'
+import creon from '../assets/images/products/Kreon.png'
 import normoven from '../assets/images/products/Normoven.png'
  
 import oralBImg from '../assets/images/banners/Oral-B.png'

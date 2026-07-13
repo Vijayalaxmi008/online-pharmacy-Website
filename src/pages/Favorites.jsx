@@ -49,7 +49,7 @@ const Favorites = () => {
         </div>
       )}
 
-      <h2 className="text-xl font-bold mb-4">Always useful</h2>
+      <h2 className="text-xl font-bold mb-4">Pay Attention</h2>
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         {recommended.map(p => <ProductCard key={p.id} product={p} />)}
       </div>

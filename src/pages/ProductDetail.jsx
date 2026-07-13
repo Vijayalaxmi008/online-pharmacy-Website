@@ -169,7 +169,7 @@ const ProductDetail = () => {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-lg font-bold mb-3">Please note</h2>
+            <h2 className="text-lg font-bold mb-3">Pay Attention</h2>
             <div className="bg-white rounded-2xl shadow-sm p-5 flex flex-col sm:flex-row items-center gap-4">
               <div className="flex items-center gap-3 flex-1">
                 {products.slice(0, 2).map(p => (

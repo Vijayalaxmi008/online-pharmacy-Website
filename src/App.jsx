@@ -35,6 +35,7 @@ import Privacy from './pages/Privacy'
 import AlphabetSearch from './pages/AlphabetSearch'
 import Vitamins from './pages/Vitamins'
 import StaticText from './pages/StaticText'
+import MedEquipment from './pages/MedEquipment'
 import NotFound from './pages/NotFound'
 
 const WINDOWS_1252_BYTES = {
@@ -90,6 +91,18 @@ const repairVisibleText = (root = document.body) => {
 
 function AppLayout() {
   const location = useLocation()
+  const hideGlobalHealthBlog = [
+    '/Mother-&-Child',
+    '/mother-and-baby',
+    '/Lenses',
+    '/lenses',
+    '/med-supplies',
+    '/medical-supplies',
+    '/pet-products',
+    '/pet-supplies',
+    '/med-equipment',
+    '/medical-equipment',
+  ].includes(location.pathname)
 
   useEffect(() => {
     // Reset scroll position on every route change so the new page opens
@@ -129,11 +142,19 @@ function AppLayout() {
           <Route path="/" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/beauty" element={<Beauty />} />
+          <Route path="/Beauty" element={<Beauty />} />
           <Route path="/hygiene" element={<Hygiene />} />
+          <Route path="/Hygiene" element={<Hygiene />} />
           <Route path="/lenses" element={<Lenses />} />
+          <Route path="/Lenses" element={<Lenses />} />
           <Route path="/mother-and-baby" element={<MotherAndBaby />} />
+          <Route path="/Mother-&-Child" element={<MotherAndBaby />} />
           <Route path="/medical-supplies" element={<MedicalSupplies />} />
+          <Route path="/med-supplies" element={<MedicalSupplies />} />
+          <Route path="/medical-equipment" element={<MedEquipment />} />
+          <Route path="/med-equipment" element={<MedEquipment />} />
           <Route path="/pet-supplies" element={<PetSupplies />} />
+          <Route path="/pet-products" element={<PetSupplies />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
@@ -172,7 +193,7 @@ function AppLayout() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <HealthBlogSection />
+      {!hideGlobalHealthBlog && <HealthBlogSection />}
       <QuestionsCTA />
       <Footer />
     </div>
